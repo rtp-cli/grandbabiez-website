@@ -33,3 +33,19 @@ input[type="radio"]{accent-color:#C56B4A;width:1.15rem;height:1.15rem}
 .hv5:hover{color:#FBF5EC !important;}
 .hv6:hover{border-color:#FBF5EC !important;}
 .hv7:hover{text-decoration:underline !important;}
+
+/* ---- narrow-screen header: survive the A+ text size ---- */
+@media (max-width:48rem){
+  header > div:nth-of-type(2){flex-wrap:wrap!important;gap:.6rem!important;padding-left:1rem!important;padding-right:1rem!important}
+  header > div:nth-of-type(2) img{height:40px!important;max-width:52vw}
+  #menu-btn{padding:.3rem .85rem!important;font-size:.88rem!important;min-height:44px!important}
+  header .btn-primary{padding:.5rem 1.15rem!important;font-size:.92rem!important;min-height:44px!important}
+  #gb-navwrap{padding-left:1rem!important;padding-right:1rem!important}
+  header > div:first-child > div{padding-left:1rem!important;padding-right:1rem!important}
+  /* footer: span-2 forces auto-fit to 2 tracks of 15rem, which cannot fit a phone */
+  footer > div > div:first-child{grid-column:auto!important}
+}
+@media (max-width:30rem){
+  header .striplink span{white-space:normal!important}
+  header > div:nth-of-type(2) img{height:36px!important;max-width:46vw}
+}
