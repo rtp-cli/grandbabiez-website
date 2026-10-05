@@ -23,6 +23,7 @@ Vercel serves `index.html` at the root. Nothing to compile.
 | `ideas.html` | Ideas & thanks |
 | `trust.html` | Our promises |
 | `join.html` | Join the first 100 |
+| `support.html` | Support (served at `/support` via the rewrite in `vercel.json`) |
 | `styles.css` | All shared styles |
 | `script.js` | Menu toggle, text-size preference, form submission |
 | `assets/` | Logo and photography |
