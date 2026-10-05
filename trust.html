@@ -26,9 +26,9 @@
   <header style="position:sticky; top:0; z-index:40; background:#FBF5EC; border-bottom:1px solid #E6DBC9;">
   <div style="background:#2B2621; color:#FBF5EC;">
     <div style="max-width:78rem; margin:0 auto; padding:0.3rem clamp(1.25rem,5vw,4rem); display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
-      <a class="striplink" href="tel:+14082197677" style="display:inline-flex; align-items:center; gap:0.45rem; min-height:36px; color:#FBF5EC; text-decoration:none; font-size:0.88rem;">
+      <a class="striplink" href="tel:{{PHONE}}" style="display:inline-flex; align-items:center; gap:0.45rem; min-height:36px; color:#FBF5EC; text-decoration:none; font-size:0.88rem;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E7B24D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        <span style="white-space:nowrap;">Talk to a person: <strong style="font-weight:600;">(408) 219-7677</strong></span>
+        <span style="white-space:nowrap;">Talk to a person: <strong style="font-weight:600;">{{PHONE}}</strong></span>
       </a>
       <div style="display:flex; align-items:center; gap:0.5rem; flex-shrink:0;">
         <span style="font-size:0.82rem; color:rgba(251,245,236,.7); white-space:nowrap;">Text size</span>
@@ -81,11 +81,11 @@
           </div>
           <div style="padding-top:1.25rem; border-top:3px solid #E7B24D;">
             <h3 style="margin:0 0 0.6rem; font-weight:500; font-size:1.2rem; letter-spacing:-0.015em;">Never sold, never advertised</h3>
-            <p style="margin:0; color:#6B6259; font-size:1rem; text-wrap:pretty;">We don&rsquo;t sell or rent your information, run ads, build profiles, or use trackers. Our business is a simple subscription &mdash; not your data.</p>
+            <p style="margin:0; color:#6B6259; font-size:1rem; text-wrap:pretty;">We don&rsquo;t sell or rent your information, run ads, build profiles, or use trackers. We will make our money from families paying for the product, never from their data.</p>
           </div>
           <div style="padding-top:1.25rem; border-top:3px solid #E7A9A0;">
             <h3 style="margin:0 0 0.6rem; font-weight:500; font-size:1.2rem; letter-spacing:-0.015em;">Parents in control</h3>
-            <p style="margin:0; color:#6B6259; font-size:1rem; text-wrap:pretty;">A parent approves the circle before a child is in it, and decides what their child can see and share. You&rsquo;re always in charge.</p>
+            <p style="margin:0; color:#6B6259; font-size:1rem; text-wrap:pretty;">For a child under 13, a parent gives consent before anything is collected, and decides what their child can see and share. For a teenager, a family member invites them and a parent can see and manage their participation. You&rsquo;re always in charge.</p>
           </div>
         </div>
       </div>
@@ -169,12 +169,12 @@
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr)); gap:0 clamp(2.5rem,6vw,5rem);">
           <div style="padding:1.75rem 0; border-top:2px solid #C56B4A;">
-            <h3 style="margin:0 0 0.5rem; font-weight:500; font-size:1.2rem; letter-spacing:-0.015em;">Nothing public, ever</h3>
+            <h3 style="margin:0 0 0.5rem; font-weight:500; font-size:1.2rem; letter-spacing:-0.015em;">Nothing public</h3>
             <p style="margin:0; color:#6B6259; font-size:1rem; text-wrap:pretty;">There is no public surface anywhere in Grandbabiez. Nothing your family shares leaves your circle.</p>
           </div>
           <div style="padding:1.75rem 0; border-top:2px solid #7C9B84;">
             <h3 style="margin:0 0 0.5rem; font-weight:500; font-size:1.2rem; letter-spacing:-0.015em;">Easy to leave</h3>
-            <p style="margin:0; color:#6B6259; font-size:1rem; text-wrap:pretty;">Leave in the app or with one phone call &mdash; no menus, no retention maze. Being easy to leave is exactly what makes us comfortable to stay with.</p>
+            <p style="margin:0; color:#6B6259; font-size:1rem; text-wrap:pretty;">Leave whenever you like, from your account settings. Or call us and a person will do it for you &mdash; no menus, no retention maze. Being easy to leave is exactly what makes us comfortable to stay with.</p>
           </div>
           <div style="padding:1.75rem 0; border-top:2px solid #E7B24D;">
             <h3 style="margin:0 0 0.5rem; font-weight:500; font-size:1.2rem; letter-spacing:-0.015em;">Honest about where we are</h3>
@@ -198,7 +198,7 @@
             <li style="display:grid; grid-template-columns:auto 1fr; gap:0.75rem; font-size:1rem; color:#6B6259;"><span style="width:6px; height:6px; border-radius:999px; background:#C56B4A; margin-top:0.6rem;"></span><span><strong style="color:#2B2621; font-weight:600;">Parent-approved.</strong> No child information without a parent&rsquo;s verifiable consent.</span></li>
             <li style="display:grid; grid-template-columns:auto 1fr; gap:0.75rem; font-size:1rem; color:#6B6259;"><span style="width:6px; height:6px; border-radius:999px; background:#C56B4A; margin-top:0.6rem;"></span><span><strong style="color:#2B2621; font-weight:600;">Built to follow COPPA.</strong> Children&rsquo;s privacy treated as the floor, not the ceiling.</span></li>
             <li style="display:grid; grid-template-columns:auto 1fr; gap:0.75rem; font-size:1rem; color:#6B6259;"><span style="width:6px; height:6px; border-radius:999px; background:#C56B4A; margin-top:0.6rem;"></span><span><strong style="color:#2B2621; font-weight:600;">Simple enough for anyone.</strong> Large text, worded buttons, a real phone line.</span></li>
-            <li style="display:grid; grid-template-columns:auto 1fr; gap:0.75rem; font-size:1rem; color:#6B6259;"><span style="width:6px; height:6px; border-radius:999px; background:#C56B4A; margin-top:0.6rem;"></span><span><strong style="color:#2B2621; font-weight:600;">Yours to leave anytime.</strong> Leave in the app or with one call, and we&rsquo;ll delete what you ask us to.</span></li>
+            <li style="display:grid; grid-template-columns:auto 1fr; gap:0.75rem; font-size:1rem; color:#6B6259;"><span style="width:6px; height:6px; border-radius:999px; background:#C56B4A; margin-top:0.6rem;"></span><span><strong style="color:#2B2621; font-weight:600;">Yours to leave anytime.</strong> Leave whenever you like, from your account settings, or call us and a person will do it for you. We&rsquo;ll delete what you ask us to.</span></li>
           </ul>
         </div>
       </div>
@@ -211,7 +211,7 @@
         <p style="margin:0 auto 2.5rem; font-size:1.08rem; color:#6B6259; max-width:52ch; text-wrap:pretty;">We&rsquo;d rather earn your trust in a straight conversation than a wall of legalese. A real person will answer.</p>
         <div style="display:flex; flex-wrap:wrap; gap:0.9rem; justify-content:center;">
           <a href="join.html" style="display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0.85rem 2rem; border-radius:999px; background:#C56B4A; color:#fff; text-decoration:none; font-weight:600; font-size:1.05rem;" class="hv1">Join the first 100</a>
-          <a href="tel:+14082197677" style="display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0.85rem 2rem; border-radius:999px; background:#FFFFFF; color:#2B2621; text-decoration:none; font-weight:600; font-size:1.05rem; border:1.5px solid #E6DBC9;" class="hv2">Call (408) 219-7677</a>
+          <a href="tel:{{PHONE}}" style="display:inline-flex; align-items:center; justify-content:center; min-height:56px; padding:0.85rem 2rem; border-radius:999px; background:#FFFFFF; color:#2B2621; text-decoration:none; font-weight:600; font-size:1.05rem; border:1.5px solid #E6DBC9;" class="hv2">Call {{PHONE}}</a>
         </div>
       </div>
     </section>
@@ -222,7 +222,7 @@
     <div style="grid-column:span 2; min-width:0;">
       <p style="margin:0 0 0.75rem; font-weight:300; font-size:1.4rem; line-height:1.25; letter-spacing:-0.02em; max-width:24ch;">The next best thing to being with your grandchildren.</p>
       <p style="margin:0 0 1.5rem; color:rgba(251,245,236,.72); font-size:0.98rem;">Grandbabiez &mdash; arriving October 2026, starting here in Central Florida.</p>
-      <p style="margin:0; color:rgba(251,245,236,.52); font-size:0.88rem;">&copy; 2026 Grandbabiez. Private by default. Nothing sold, ever.</p>
+      <p style="margin:0; color:rgba(251,245,236,.52); font-size:0.88rem;">&copy; 2026 Grandbabiez. Private by default. We never sell your information.</p>
       <p style="margin:0.5rem 0 0; font-size:0.88rem;"><a href="privacy.html" style="color:rgba(251,245,236,.72); text-decoration:none;" class="hv4">Privacy Policy</a> <span style="color:rgba(251,245,236,.3);">&middot;</span> <a href="terms.html" style="color:rgba(251,245,236,.72); text-decoration:none;" class="hv4">Terms of Use</a> <span style="color:rgba(251,245,236,.3);">&middot;</span> <a href="safety.html" style="color:rgba(251,245,236,.72); text-decoration:none;" class="hv4">For parents</a></p>
     </div>
     <div>
@@ -240,7 +240,7 @@
     <div>
       <h4 style="margin:0 0 1rem; font-size:0.78rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#E7B24D;">Talk to a person</h4>
       <ul style="list-style:none; margin:0; padding:0; display:grid; gap:0.6rem;">
-        <li><a href="tel:+14082197677" style="color:rgba(251,245,236,.85); text-decoration:none; font-size:0.98rem;" class="hv5">(408) 219-7677</a></li>
+        <li><a href="tel:{{PHONE}}" style="color:rgba(251,245,236,.85); text-decoration:none; font-size:0.98rem;" class="hv5">{{PHONE}}</a></li>
         <li><a href="mailto:greg@grandbabiez.com" style="color:rgba(251,245,236,.85); text-decoration:none; font-size:0.98rem;" class="hv5">greg@grandbabiez.com</a></li>
       </ul>
     </div>
