@@ -41,7 +41,7 @@
   }
 
   ajax('join-form','join-thanks','join-error-wrap','Request my founding place',
-    'Something went wrong. Please call (408) 219-7677 and we\u2019ll add you ourselves.',
+    'Something went wrong. Please call (352) 290-3530 and we\u2019ll add you ourselves.',
     function(form){
       var n=form.querySelector('#firstname'), p=form.querySelector('#phone');
       if(n&&!n.value.trim()){ n.focus(); return ' '; }
