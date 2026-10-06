@@ -37,7 +37,7 @@ Both forms post to Formspree over `fetch`, so the page never reloads.
 
 ## Things to change before launch
 
-- **Phone number.** `(408) 219-7677` appears in the header strip of every page, the footer, and the Join and Trust pages. It is a personal cell. To remove it site-wide, delete the `<div>` wrapping the `striplink` anchor in each page's header.
+- **Phone number.** `(352) 290-3530` appears in the header strip of every page, the footer, the Join, Trust and Support pages, and the legal contact details. It is the business support line chosen by the client. To remove it site-wide, delete the `<div>` wrapping the `striplink` anchor in each page's header.
 - **Missing legal pages.** The footer links to `/privacy.html`, `/safety.html`, and `/parent-notice.html`. None exist yet — they 404 on the current live site too.
 - **Text size.** The A / A+ control stores a preference in `localStorage` under `gb-textsize`.
 
