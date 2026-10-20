@@ -121,3 +121,38 @@ Client text ported character for character. Nothing below was edited to fix it.
 | 39 | 16. Contact us | `[ZIP]` | Launch blocker. |
 
 Totals: 39 occurrences, 21 distinct.
+
+## Slice 6: parent-notice.html
+
+Client note ported word for word. Nothing below was edited to fix it.
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 48 | "How to give your consent" | The page cannot collect consent. The client's button points at the literal text `[consent link]`, so it is rendered inert: `disabled`, `aria-disabled="true"`, muted colours, no link, not reachable by Tab. Label "Review & give consent" is unchanged. Step 1 still says "Tap the button below (or call us)". | Launch blocker. Client to supply the consent mechanism and link. |
+| 49 | Whole page | 8 `[bracketed]` placeholders in the text, 6 distinct (table below), plus the `[consent link]` href that is not shipped. All are launch blockers. | Kept verbatim. Client to supply. |
+| 50 | Note vs policy: age | Note: "their first name, age, and interests". Policy 6.3 and its table: "an age range, used only to choose age-appropriate prompts" / "Age range". Policy part one repeats the note's wording ("first name, age, and interests"). | Kept verbatim. Client to confirm which. |
+| 51 | "What Grandbabiez is" | "Once a week, a friendly question arrives" and "weekly moment". The app sends prompts daily (items 1, 39). | Kept verbatim. Client to confirm. |
+| 52 | "How we'd use it" | "…except with the trusted providers who help us run the service securely and on our instructions." No provider is named. Policy 5.2 has `[LIST SPECIFIC PROVIDERS OR LINK TO A LIST]`. The note has no separate consent line for disclosure to third parties. | Kept verbatim. For counsel. |
+| 53 | "do nothing" paragraph | "If we don't hear from you within a reasonable time, we'll delete your contact information". No retention period. Policy has `[X]` and `[30]`. | Kept verbatim. For counsel. |
+| 54 | Intro | "Because your child is under 13…" while the policy applies its protections to "every Child … including teens". | Kept verbatim. Client to confirm. |
+| 55 | Step 1 | Verification is `[We'll verify this using our chosen method…]`; policy 6.2 has `[CONSENT METHOD — …]`. The note offers phone consent, the policy never describes it. | Kept verbatim. Client to confirm. |
+| 56 | Step circles | Client weight 700 on the numbers; the repo maximum is 600, so they use 600. Only styling changed. | Deliberate. |
+| 57 | Page top | The client's centred logo link is not added. The repo header already has the logo, so the page opens with the illustration. | Deliberate. |
+| 58 | `parent-notice.html` SVG | Same illustration as ideas.html. Fills outside the palette, kept: `#D8A87E`, `#EAC7A4`. | Left as is. |
+| 59 | Footer, slice 7 | The footer's "For parents" link must point to `parent-notice.html`, not `safety.html`. | Slice 7. |
+| 60 | Head | Title "A note for parents — Grandbabiez" and the client's description with curly apostrophes; og tags match. | Deliberate. |
+
+### Placeholders, one per occurrence (launch blockers)
+
+| # | Section | Placeholder |
+|---|---------|-------------|
+| 1 | h1 | `[child’s first name]` |
+| 2 | Intro lead | `[Grandparent’s name]` |
+| 3 | Intro lead | `[child’s first name]` |
+| 4 | Intro second paragraph | `[grandparent’s name]` |
+| 5 | Step 1 | `[child’s first name]` |
+| 6 | Step 1 | `[We’ll verify this using our chosen method — for example, a quick step with a trained member of our team by phone or video.]` |
+| 7 | Questions? | `[Grandbabiez legal entity name]` |
+| 8 | Questions? | `[company mailing address]` |
+
+Totals: 8 occurrences, 6 distinct. Not shipped: `href="[consent link]"`.
