@@ -7,7 +7,7 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | # | Where | Item | Status |
 |---|-------|------|--------|
 | 1 | Hero, "Private spaces" tab lede | Copy says "weekly prompts". The app sends prompts daily (develop 4466a20). | Kept verbatim. Client to confirm. |
-| 2 | Join band | "No Charge for 3 years". The app has a 30-day trial and no 3-year offer. Live terms say "currently free". Store/legal risk. | Kept verbatim. Decide before merge. |
+| 2 | Join band | "No Charge for 3 years". The app has a 30-day trial and no 3-year offer. Live terms say "currently free". Store/legal risk. | Kept verbatim. Decide before merge. Slice 8: the "No Charge for 3 years" wording on `join.html` is gone with the page; the copy that remains is on the home page and the demo. |
 | 3 | Demo keyboard | Tabs work with Tab + Enter. No arrow-key navigation between tabs. | Low priority. Not changed. |
 | 4 | Header strip | "A" / "A+" buttons (34px) and the phone link (36px) are under 44px. Copied unchanged from the existing research.html header. | Pre-existing, all pages. Slice 7: not changed (A/A+ still 34px, phone still 36px; Join, Menu and nav links stay 44px or more). (was: Pre-existing, all pages. Not changed.) |
 | 5 | Header/footer | Join band and "Become a founding family" link to `index.html` (no `#founding`, `#how` yet). Switch in slices 2-3. | RESOLVED (slice 7): header Join now links `index.html#founding`, nav "How it works" links `index.html#how-it-works`. (was: Pending slices 2-3.) |
@@ -18,7 +18,7 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 
 | # | Where | Item | Status |
 |---|-------|------|--------|
-| 8 | Hero reassure list; dark "Be one of our first 100" band | "No Charge for 3 years" (hero, client copy) and "free for three years" (old founding band, kept until slice 3). Same store/legal risk as item 2. | Kept verbatim. Decide before merge. |
+| 8 | Hero reassure list; dark "Be one of our first 100" band | "No Charge for 3 years" (hero, client copy) and "free for three years" (old founding band, kept until slice 3). Same store/legal risk as item 2. | Kept verbatim. Decide before merge. Slice 8: `join.html` ("free for three years") is deleted; the remaining occurrences are on the home page. |
 | 9 | `assets/photo-grandmother.jpg`, `assets/photo-grandfather.jpg` | No photo consent or release on file. Each shows one adult, no children. | Confirm release before launch. |
 | 10 | `assets/hero.jpg` | No longer referenced by any page after this slice. | File left in place. Delete if the client confirms. |
 | 11 | Demo preview stats | 52 / 208 / 1,042 / 66 checked against the data in `legacy-demo.html`: 52 weeks, 208 exchanges, 1,042 messages, 66 stories. All match. | No action. |
@@ -30,7 +30,7 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | # | Where | Item | Status |
 |---|-------|------|--------|
 | 14 | Hero badge, hero CTA | Now link to `#founding` (item 12 resolved). | Done. |
-| 15 | Founding block (heading, offer box), hero reassure list | "No Charge for 3 years", then $14.95 a month or $149.95 a year, for up to 10 people. Conflicts with the app's 30-day trial and the live terms ("currently free"). Extends items 2 and 8. The old band's "free for three years" is gone. | Kept verbatim. Decide before merge. |
+| 15 | Founding block (heading, offer box), hero reassure list | "No Charge for 3 years", then $14.95 a month or $149.95 a year, for up to 10 people. Conflicts with the app's 30-day trial and the live terms ("currently free"). Extends items 2 and 8. The old band's "free for three years" is gone. | Kept verbatim. Decide before merge. Slice 8: the old join form and its fields are gone with `join.html`; the founding block is the only signup. |
 | 16 | Founding form | Posts to the client's live Formspree form (`xzdnwgpb`). Owner of the account, which email receives notifications, and a second recipient are unknown. | Client to confirm. |
 | 17 | Founding form | Signups exist only in Formspree and an inbox. No export or spreadsheet copy. | Set up a regular export. |
 | 18 | Founding form | No spam protection. Recommendation P1: a hidden `_gotcha` honeypot field. | Not added (off). Decide. |
@@ -40,7 +40,7 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | 22 | Founding form footnote | Formspree receives names, phone numbers and emails. The footnote says "We don't share your details with anyone". Privacy Policy not edited. | Flag for the client. |
 | 23 | Founding form | The old join form fields (first name, grandchildren, neighbourhood, states, feedback, why) are no longer collected. Exports change shape. | Noted. |
 | 24 | `script.js` | Deliberate differences from the client script: Formspree's own error text is not shown (fixed fallback message only); after a failed send, focus returns to the submit button; a blank validation message keeps the alert hidden. | Deliberate. |
-| 25 | `join.html` | Shares `#join-form` with the new block. Its failure label now reads "Count me in". Page is deleted in slice 8. | Accepted. |
+| 25 | `join.html` | Shares `#join-form` with the new block. Its failure label now reads "Count me in". Page is deleted in slice 8. | Accepted. Slice 8: RESOLVED. `join.html` is deleted, so `#join-form` exists only on the index founding block. |
 | 26 | Footer | Footer "Join the first 100" still links to `join.html` (slice 7). The spec's expected grep (header only) was wrong. | RESOLVED (slice 7): footer "Join the founding 100" links `index.html#founding`; no footer links to `join.html`. (was: Pending slice 7.) |
 | 27 | Founding steps | Step 2: "A parent says yes before a grandchild joins." The site has no mechanism for this yet. | Kept verbatim. Client to confirm. |
 
@@ -172,3 +172,14 @@ Totals: 8 occurrences, 6 distinct. Not shipped: `href="[consent link]"`.
 | 69 | Anchors | `#how-it-works`, `#legacy-demo-preview`, `#founding` use `scroll-margin-top:9rem` (144px at A, 180px at A+). At 390px the header is taller, so `scroll-padding-top:3rem` (48px at A, 60px at A+) was added; headings land 18-31px below the header. At 1440px (no change allowed) the section edge sits 26px (A) and 4px (A+) under the header; headings stay fully visible because of section padding. | Done. |
 | 70 | `legacy-demo.html` tab switch | The page script (`window.scrollTo` to `nav.tabs`, outside header/footer/main) puts the tab bar at the top of the window after a tab change from deep scroll, so it is fully hidden under the sticky header (161px at A, 222px at A+ at 390px; also at 1440px). Not caused by slice 7 (the old header was 246/324px there), and `scroll-padding` does not affect `scrollTo`. Story selection (`scrollIntoView`) is fine. | Not fixed. Needs a one-line script change: subtract the header height. |
 | 71 | Keyboard order | At 1440px the Join button comes before the nav links in Tab order (DOM order, as before). | Pre-existing. Not changed. |
+
+## Slice 8: retired pages and redirects
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 72 | `vercel.json` redirect targets (D7) | Deleted `why`, `whats-coming`, `what-changes`, `trust` (each with and without `.html`) redirect 301 to `/`. `/join` and `/join.html` go to `/#founding`. `/safety` and `/safety.html` go to `/parent-notice.html` because `safety.html` was the "For parents" page. `/` was the alternative for `/safety`. | Owner to confirm all targets (D7). |
+| 73 | `vercel.json` | The rules use `"statusCode": 301` (Vercel's `permanent:true` would send 308). The change is additive: `trailingSlash` and the `/support` rewrite are untouched. Tested locally against the rule set only. | Check real status codes, the `#founding` fragment and the `/support` rewrite in a Vercel preview. |
+| 74 | Terms and Support | The client's design has no Terms or Support page. `terms.html` and `support.html` are kept and linked from every footer at the dev's request (D10). `privacy.html` is untouched. | Confirm with the client. |
+| 75 | Outside the repo | Nothing in the repo or in `grandbabiez/docs` and `apps/mobile/src` links to the six deleted URLs. Not checkable from here: app store listings and review notes; the Formspree form (`xzdnwgpb`) redirect or thank-you setting; emails and onboarding messages; social profiles, QR codes and print; Google index and Search Console; partner or press links. | Dev to check. |
+| 76 | `assets/join-photo.jpg` | Now unused (only `join.html` used it). `assets/hero.jpg` is also unused (item 10). Neither deleted. | Delete if the client confirms. |
+| 77 | `README.md`, `CLAUDE.md` | Still list the six deleted pages (README file table, Join form line, missing-legal-pages line; CLAUDE.md known open items). `site.webmanifest` needed no change (no shortcuts, `start_url` or `scope`). | Update in slice 9. |

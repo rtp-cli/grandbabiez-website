@@ -41,7 +41,7 @@ Known baseline noise: the `support` rewrite warning.
 | 5 | `05-privacy.md` | built, ready to commit | `feat(privacy): rewrite with plain-language summary, billing, AI opt-out, SMS terms` |
 | 6 | `06-parent-notice.md` | | `feat(parent-notice): rewrite as direct note with three-step consent` |
 | 7 | `07-shared-header-footer.md` | built, ready to commit | `feat(nav): update shared header and footer, add founding-families banner` |
-| 8 | `08-remove-retired-pages.md` | | `chore: remove retired pages and add redirects` |
+| 8 | `08-remove-retired-pages.md` | built, ready to commit | `chore: remove retired pages and add redirects` |
 | 9 | `09-claude-md-readme.md` | | `docs: update CLAUDE.md and README for revised site` |
 | 10 | `10-final-checks.md` | | `fix(research): restore the dose caveat section` |
 
