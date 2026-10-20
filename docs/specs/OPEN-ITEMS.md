@@ -59,68 +59,68 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 
 ## Slice 5: privacy.html
 
-Client text ported character for character. Nothing below was edited to fix it.
+Client text ported character for character. Nothing below was edited to fix it. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). The rows and tables below describe the client text and no longer apply to the page.
 
 | # | Where | Item | Status |
 |---|-------|------|--------|
-| 36 | Whole policy | 39 `[bracketed]` placeholders, 21 distinct, listed one per line in the table below. Every one is a launch blocker. | Kept verbatim. Client to supply. |
-| 37 | 3.5 "To keep the Services safe and secure" and 5.4 "For legal reasons and to protect people" | "Investigate reports of inappropriate content and enforce our Terms of Service." and "to enforce our Terms of Service". The policy never says "Terms of Use". The Terms page is removed in slice 8, so these point at nothing on the site. | Kept verbatim. Client to confirm. |
-| 38 | Part one, "Children's privacy" | "We extend the same protections to every Child in a family circle, including teens." Teens are named, while the client's parent notice speaks only of a child under 13. | Kept verbatim. Client to confirm. |
-| 39 | Throughout | "weekly" appears 7 times ("a weekly moment", "weekly prompts"). The app sends prompts daily (see item 1). Slice 10: the restored caveat on `research.html` also says "about ten minutes a week", the same weekly-vs-daily question. | Kept verbatim. Client to confirm. |
-| 40 | 2.1 vs 2.2/6.3 | The policy says an adult profile may include a "birthday" and, for a Child, an "Age range" (6.3). The client's parent notice says "their first name, age, and interests". "Age range" vs "age" is not the same promise. | Kept verbatim. Client to confirm which is right. |
-| 41 | Full policy vs part one | "Grandbabiez, Inc." is named 5 times (full policy, 6.1) while the intro line and "How to reach us" use `[Grandbabiez legal entity name]`. | Kept verbatim. Client to confirm the legal name. |
-| 42 | 2.1, 3.3 | "free-trial dates", "Start and end free trials". The home page offers "No Charge for 3 years" (items 2, 8, 15). | Kept verbatim. Decide before merge. |
-| 43 | Footers on other pages | Footers still list "Terms of Use" (slice 7 and slice 8). | RESOLVED (slice 7): every footer now links Terms of Use (`terms.html`) and Support (`support.html`). Terms page is kept (D10), so item 37 is moot. (was: Pending.) |
-| 44 | Text not in the client | None of these appear in the client text: the 50-cent charge, "date of birth", "support@grandbabiez.com". | No action. |
-| 45 | `privacy.html` SVG | Same illustration as research.html. Fills outside the palette, kept: `#8C5A38`, `#B5544A`, `#D8A87E`, `#EAC7A4`, `#5f7a66`. | Left as is. |
-| 46 | Head | Title and description follow the client's wording with curly apostrophes; og:title and og:description updated to match. Body text keeps the client's mix of straight (`&#39;`) and curly apostrophes. | Deliberate. |
-| 47 | Spec 07 | Item 7 above is now moot for `privacy.html`: legal pages are no longer off limits, but slice 7 still must not touch the policy text. | RESOLVED (slice 7): policy text untouched; spec 07 facts corrected (see items 61-62). (was: Revise spec 07.) |
+| 36 | Whole policy | 39 `[bracketed]` placeholders, 21 distinct, listed one per line in the table below. Every one is a launch blocker. | Kept verbatim. Client to supply. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 37 | 3.5 "To keep the Services safe and secure" and 5.4 "For legal reasons and to protect people" | "Investigate reports of inappropriate content and enforce our Terms of Service." and "to enforce our Terms of Service". The policy never says "Terms of Use". The Terms page is removed in slice 8, so these point at nothing on the site. | Kept verbatim. Client to confirm. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 38 | Part one, "Children's privacy" | "We extend the same protections to every Child in a family circle, including teens." Teens are named, while the client's parent notice speaks only of a child under 13. | Kept verbatim. Client to confirm. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 39 | Throughout | "weekly" appears 7 times ("a weekly moment", "weekly prompts"). The app sends prompts daily (see item 1). Slice 10: the restored caveat on `research.html` also says "about ten minutes a week", the same weekly-vs-daily question. | Kept verbatim. Client to confirm. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 40 | 2.1 vs 2.2/6.3 | The policy says an adult profile may include a "birthday" and, for a Child, an "Age range" (6.3). The client's parent notice says "their first name, age, and interests". "Age range" vs "age" is not the same promise. | Kept verbatim. Client to confirm which is right. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 41 | Full policy vs part one | "Grandbabiez, Inc." is named 5 times (full policy, 6.1) while the intro line and "How to reach us" use `[Grandbabiez legal entity name]`. | Kept verbatim. Client to confirm the legal name. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 42 | 2.1, 3.3 | "free-trial dates", "Start and end free trials". The home page offers "No Charge for 3 years" (items 2, 8, 15). | Kept verbatim. Decide before merge. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 43 | Footers on other pages | Footers still list "Terms of Use" (slice 7 and slice 8). | RESOLVED (slice 7): every footer now links Terms of Use (`terms.html`) and Support (`support.html`). Terms page is kept (D10), so item 37 is moot. (was: Pending.) SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 44 | Text not in the client | None of these appear in the client text: the 50-cent charge, "date of birth", "support@grandbabiez.com". | No action. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 45 | `privacy.html` SVG | Same illustration as research.html. Fills outside the palette, kept: `#8C5A38`, `#B5544A`, `#D8A87E`, `#EAC7A4`, `#5f7a66`. | Left as is. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 46 | Head | Title and description follow the client's wording with curly apostrophes; og:title and og:description updated to match. Body text keeps the client's mix of straight (`&#39;`) and curly apostrophes. | Deliberate. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 47 | Spec 07 | Item 7 above is now moot for `privacy.html`: legal pages are no longer off limits, but slice 7 still must not touch the policy text. | RESOLVED (slice 7): policy text untouched; spec 07 facts corrected (see items 61-62). (was: Revise spec 07.) SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
 
 ### Placeholders, one per occurrence (launch blockers)
 
 | # | Section | Placeholder | Status |
 |---|---------|-------------|--------|
-| 1 | Intro (effective date line) | `[Grandbabiez legal entity name]` | Launch blocker. |
-| 2 | Intro (effective date line) | `[company mailing address]` | Launch blocker. |
-| 3 | Who can see it | `[service providers to list]` | Launch blocker. |
-| 4 | How long we keep it | `[retention periods to confirm]` | Launch blocker. |
-| 5 | How to reach us | `[Grandbabiez legal entity name]` | Launch blocker. |
-| 6 | How to reach us | `[company mailing address]` | Launch blocker. |
-| 7 | 2.1 Grandparents, Family Members, and Circle Organizers | `[CONFIRM IMPLEMENTATION]` | Launch blocker. |
-| 8 | 2.1 Grandparents, Family Members, and Circle Organizers | `[PAYMENT PROCESSOR]` | Launch blocker. |
-| 9 | 4.2 How Family Content is processed | `[NAME AI PROVIDER(S)]` | Launch blocker. |
-| 10 | 4.2 How Family Content is processed | `[CONFIRM WITH VENDORS]` | Launch blocker. |
-| 11 | 4.3 Training | `[CONFIRM — or describe opt-in program]` | Launch blocker. |
-| 12 | 4.5 Turning AI features off | `[CONFIRM CONTROL EXISTS]` | Launch blocker. |
-| 13 | 5.2 With service providers | `[LIST SPECIFIC PROVIDERS OR LINK TO A LIST]` | Launch blocker. |
-| 14 | 6.1 Operator contact information | `[MAILING ADDRESS]` | Launch blocker. |
-| 15 | 6.1 Operator contact information | `[ZIP]` | Launch blocker. |
-| 16 | 6.1 Operator contact information | `[LIST ANY OTHER OPERATORS, OR STATE THAT NO OTHER OPERATORS COLLECT CHILDREN'S INFORMATION THROUGH THE SERVICES]` | Launch blocker. |
-| 17 | 6.2 How a Child joins | `[X]` | Launch blocker. |
-| 18 | 6.2 How a Child joins | `[CONSENT METHOD — e.g., small credit-card authorization, signed form, video call, or government ID check with immediate deletion]` | Launch blocker. |
-| 19 | 6.6 Retention of Children's information | `[X]` | Launch blocker. |
-| 20 | 8.5 Phone calls | `[CONFIRM]` | Launch blocker. |
-| 21 | 8.6 Email tracking | `[CONFIRM]` | Launch blocker. |
-| 22 | 9.2 Requests you can make to us | `[CONFIRM FORMAT]` | Launch blocker. |
-| 23 | 9.3 What happens when you delete your account | `[X]` | Launch blocker. |
-| 24 | 9.3 What happens when you delete your account | `[CONFIRM OPTION]` | Launch blocker. |
-| 25 | 11. Security | `[CONFIRM]` | Launch blocker. |
-| 26 | 12. Retention | `[X]` | Launch blocker. |
-| 27 | 12. Retention | `[X]` | Launch blocker. |
-| 28 | 12. Retention | `[X]` | Launch blocker. |
-| 29 | 12. Retention | `[X]` | Launch blocker. |
-| 30 | 12. Retention | `[X]` | Launch blocker. |
-| 31 | 12. Retention | `[X]` | Launch blocker. |
-| 32 | 12. Retention | `[X]` | Launch blocker. |
-| 33 | 12. Retention | `[X]` | Launch blocker. |
-| 34 | 12. Retention | `[X]` | Launch blocker. |
-| 35 | 12. Retention | `[X]` | Launch blocker. |
-| 36 | 13. Where information is stored | `[CONFIRM ALL PROVIDERS ARE U.S.-BASED]` | Launch blocker. |
-| 37 | 15. Changes to this policy | `[30]` | Launch blocker. |
-| 38 | 16. Contact us | `[MAILING ADDRESS]` | Launch blocker. |
-| 39 | 16. Contact us | `[ZIP]` | Launch blocker. |
+| 1 | Intro (effective date line) | `[Grandbabiez legal entity name]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 2 | Intro (effective date line) | `[company mailing address]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 3 | Who can see it | `[service providers to list]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 4 | How long we keep it | `[retention periods to confirm]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 5 | How to reach us | `[Grandbabiez legal entity name]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 6 | How to reach us | `[company mailing address]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 7 | 2.1 Grandparents, Family Members, and Circle Organizers | `[CONFIRM IMPLEMENTATION]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 8 | 2.1 Grandparents, Family Members, and Circle Organizers | `[PAYMENT PROCESSOR]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 9 | 4.2 How Family Content is processed | `[NAME AI PROVIDER(S)]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 10 | 4.2 How Family Content is processed | `[CONFIRM WITH VENDORS]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 11 | 4.3 Training | `[CONFIRM — or describe opt-in program]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 12 | 4.5 Turning AI features off | `[CONFIRM CONTROL EXISTS]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 13 | 5.2 With service providers | `[LIST SPECIFIC PROVIDERS OR LINK TO A LIST]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 14 | 6.1 Operator contact information | `[MAILING ADDRESS]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 15 | 6.1 Operator contact information | `[ZIP]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 16 | 6.1 Operator contact information | `[LIST ANY OTHER OPERATORS, OR STATE THAT NO OTHER OPERATORS COLLECT CHILDREN'S INFORMATION THROUGH THE SERVICES]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 17 | 6.2 How a Child joins | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 18 | 6.2 How a Child joins | `[CONSENT METHOD — e.g., small credit-card authorization, signed form, video call, or government ID check with immediate deletion]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 19 | 6.6 Retention of Children's information | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 20 | 8.5 Phone calls | `[CONFIRM]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 21 | 8.6 Email tracking | `[CONFIRM]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 22 | 9.2 Requests you can make to us | `[CONFIRM FORMAT]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 23 | 9.3 What happens when you delete your account | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 24 | 9.3 What happens when you delete your account | `[CONFIRM OPTION]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 25 | 11. Security | `[CONFIRM]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 26 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 27 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 28 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 29 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 30 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 31 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 32 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 33 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 34 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 35 | 12. Retention | `[X]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 36 | 13. Where information is stored | `[CONFIRM ALL PROVIDERS ARE U.S.-BASED]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 37 | 15. Changes to this policy | `[30]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 38 | 16. Contact us | `[MAILING ADDRESS]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
+| 39 | 16. Contact us | `[ZIP]` | Launch blocker. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c). |
 
-Totals: 39 occurrences, 21 distinct.
+Totals: 39 occurrences, 21 distinct. SUPERSEDED: privacy.html reverted to the pre-branch text (base 283af5c).
 
 ## Slice 6: parent-notice.html
 
@@ -190,3 +190,4 @@ Totals: 8 occurrences, 6 distinct. Not shipped: `href="[consent link]"`.
 |---|-------|------|--------|
 | 78 | `legacy-demo.html` demo script | Three lines differ from the client's script: the portrait template's `font-size:14px` is `.875rem`, and the two eyebrow `font-size:12px` are `.75rem`. Not logged before. (The scroll fix in item 70 is a fourth difference.) | Deliberate (rem scaling with A/A+). Logged. |
 | 79 | Slice 10 gate | End-of-branch gate results (privacy and parent-notice text, terms and support `<main>`, deleted-page references, COPPA grep, placeholders, header and footer) are in the slice 10 report, not repeated here. | See report. |
+| 80 | `parent-notice.html` vs `privacy.html` | The client's parent notice (client text, 8 `[bracketed]` placeholders, inert consent button) now sits next to the ORIGINAL privacy policy (`privacy.html` reverted to base 283af5c), so the two pages describe things differently: age vs date of birth, the consent method, the 50-cent charge, SMS and AI text. | Owner and dev to decide whether to revert `parent-notice.html` as well. |
