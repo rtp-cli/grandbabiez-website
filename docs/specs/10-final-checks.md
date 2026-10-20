@@ -1,7 +1,9 @@
 # Slice 10: Dose caveat and final checks
 
-**Edits:** `research.html`, `docs/specs/OPEN-ITEMS.md`.
-**Commit:** `fix(research): restore the dose caveat section`
+**Edits:** `research.html`, `legacy-demo.html`, `docs/specs/OPEN-ITEMS.md`.
+**Commits (two, in this order):**
+1. `fix(research): restore the dose caveat section`
+2. `fix(legacy-demo): keep demo tabs below the sticky header`
 
 ## A. Restore the caveat section (dev request)
 The client removed "The one honest caveat / Dose matters — and that's the whole point." from `research.html`, but the page still says the health research is striking "with one important condition we're honest about below". Without the section the claim has no qualification and the sentence points at nothing.
@@ -9,6 +11,12 @@ The client removed "The one honest caveat / Dose matters — and that's the whol
 - Copy the whole old `<section>` back into the same position, byte for byte. No restyling, no rewording, no edits.
 - Check: the restored text equals the old text; the pointer sentence is unchanged; one `<h1>` still; no new background-band adjacency; 390px and A+ fine.
 - Log in OPEN-ITEMS: restored at the dev's request; the client's design removed it; tell the client.
+
+## A2. Legacy demo fixes (outside `<main>`; second commit)
+Found during slice 7. Both changes are outside `<main>`, so the `<main>` sha256 of `legacy-demo.html` must stay `1d779aaad4d62199...` (full hash from the slice 7 report).
+1. **Tab bar hidden under the sticky header.** When a tab is switched after scrolling down, the page's own script calls `window.scrollTo` to the tab bar, which lands it under the header (161px at A, 222px at A+ at 390px). Change only that call: subtract the sticky header's current height, read at runtime from the `header` element (no hard-coded pixels). Leave the rest of the demo script exactly as it is (it must still equal the client's script apart from this one line and the changes already logged in OPEN-ITEMS).
+2. **Missing `<body>` tag.** `legacy-demo.html` goes from `</head>` straight to the skip link. Add `<body>` between them, and `</body>` before `</html>` if absent. Nothing else.
+Verify at 390 and 1440, at A and A+: from deep scroll, switch each of the six tabs; the tab bar must be fully visible below the header. Story selection must still work. No console errors. Never POST to formspree.io.
 
 ## B. End-of-branch gate (no commit; report results)
 Let `BASE=$(git merge-base HEAD main)` (use the real base branch name).
