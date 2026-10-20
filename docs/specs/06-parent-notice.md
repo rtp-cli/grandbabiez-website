@@ -8,7 +8,7 @@
 - Copy and paste job. Port the client's wording word for word, including every `[bracketed]` placeholder. Do not fill, reword, shorten, reorder or add anything. Move it, never improve it.
 - Repo styling only. Do not copy client classes (`.notice`, `.consent-box`, `.steps-check`, `.btn`, `.lead`, `.eyebrow`) or any `<style>`.
 - Header and footer are NOT in this slice (slice 7).
-- Do not add links to `terms.html` or `support.html`.
+- Do not add links to `terms.html` or `support.html` inside `<main>`. (Footer links are added in slice 7.)
 
 ## Facts found in the client file (verify each)
 - The client page has no site nav and a minimal footer. Its `<main>` holds a centred logo, an inline SVG (child watching a video from a grandparent; `aria-label` "A grandchild smiling at a video from a grandparent on a phone"), then the note.

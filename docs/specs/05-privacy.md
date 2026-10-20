@@ -10,7 +10,7 @@ This is a copy-and-paste job. The client's privacy text goes onto `privacy.html`
 ## Scope rules
 - Repo styling only. Do not copy client classes or `<style>` blocks. Lexend Deca, existing palette, existing hover classes.
 - Header and footer are NOT in this slice (slice 7). Leave them as they are.
-- Do not add links to `terms.html` or `support.html`.
+- Do not add links to `terms.html` or `support.html` inside `<main>`. (Footer links are added in slice 7.)
 - Never POST to the live Formspree endpoint.
 
 ## Facts found in the client file (verify each yourself)
