@@ -50,12 +50,4 @@
       return null;
     },
     'We couldn\u2019t reach the server. Please call (352) 290-3530 and we\u2019ll add you ourselves.');
-
-  ajax('vote-form','vote-thanks','vote-error-wrap','Send my vote',
-    'Something went wrong. Please try again.',
-    function(form,data){
-      if(!data.get('most_wanted') && !String(data.get('other_idea')||'').trim())
-        return 'Please pick one, or tell us your own idea.';
-      return null;
-    });
 })();

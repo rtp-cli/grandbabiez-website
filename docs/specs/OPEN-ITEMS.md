@@ -43,3 +43,16 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | 25 | `join.html` | Shares `#join-form` with the new block. Its failure label now reads "Count me in". Page is deleted in slice 8. | Accepted. |
 | 26 | Footer | Footer "Join the first 100" still links to `join.html` (slice 7). The spec's expected grep (header only) was wrong. | Pending slice 7. |
 | 27 | Founding steps | Step 2: "A parent says yes before a grandchild joins." The site has no mechanism for this yet. | Kept verbatim. Client to confirm. |
+
+## Slice 4: research.html and ideas.html
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 28 | `ideas.html` | Roadmap vote form removed (and its `script.js` call). Roadmap voting no longer exists; ideas now arrive by email (`greg@grandbabiez.com`) or at signup. README and CLAUDE.md still mention the vote form. | Update in slice 9. |
+| 29 | `research.html`, "Grandparents" intro | "…with one important condition we're honest about below." The "Dose matters" caveat section it points to is removed (as in the client page), so the sentence points at nothing. The client page has the same sentence. | Kept verbatim. Client to confirm. |
+| 30 | `research.html`, `ideas.html` | Client SVGs kept as written. Fills outside the palette: research `#5F7A66`, `#8C5A38`, `#B5544A`, `#D8A87E`, `#EAC7A4`; ideas `#D8A87E`, `#EAC7A4`. | Left as is. Decide whether to recolour. |
+| 31 | `ideas.html` credits | Real first names and places: Fatima (Lahore, Pakistan); Roseanne (Pinellas County); Mark (The Villages, FL); Cheryl (The Villages, FL); "In honor of Barbara & Dean"; "In honor of Rick, Scott, and all of the others"; "In honor of Raider, Mika, and Luka" (the huskies). | Not edited. Confirm the client has permission for each. |
+| 32 | `research.html` closing buttons | Client links `index.html#how`, which does not exist on the home page. Used `index.html#how-it-works`. | Slice 7: nav links must use `#how-it-works`, not `#how`. |
+| 33 | `research.html` closing button | "Join the first 100" (repo) became "Join our founding circle" (client), linking to `index.html#founding`. | Client copy. |
+| 34 | `ideas.html` | Meta description keeps the repo's curly apostrophes; the client's uses straight ones. Same words. | Deliberate. |
+| 35 | `ideas.html` pets photo | `assets/pets.jpg` and the client's embedded image are the same picture (460x585, no people), differently encoded. Repo file kept. | No action. |
