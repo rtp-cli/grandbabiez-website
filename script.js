@@ -18,12 +18,12 @@
     mb.textContent=open?'Close':'Menu';
   });
 
-  function ajax(formId, thanksId, errWrapId, label, failMsg, validate){
+  function ajax(formId, thanksId, errWrapId, label, failMsg, validate, netMsg){
     var form=document.getElementById(formId); if(!form) return;
     var thanks=document.getElementById(thanksId), errWrap=document.getElementById(errWrapId);
     var errP=errWrap?errWrap.querySelector('p'):null;
     var btn=form.querySelector('button[type="submit"]');
-    function fail(msg){ if(errP){errP.textContent=msg; errWrap.hidden=false;} if(btn){btn.disabled=false;btn.textContent=label;} }
+    function fail(msg){ if(errP){errP.textContent=msg; errWrap.hidden=!String(msg).trim();} if(btn){btn.disabled=false;btn.textContent=label;} }
     form.addEventListener('submit',function(e){
       e.preventDefault();
       if(errWrap) errWrap.hidden=true;
@@ -34,26 +34,20 @@
       fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}})
         .then(function(r){
           if(r.ok){ form.hidden=true; if(thanks){thanks.hidden=false; thanks.setAttribute('tabindex','-1'); thanks.focus();} return; }
-          fail(failMsg);
+          fail(failMsg); if(btn) btn.focus();
         })
-        .catch(function(){ fail(failMsg); });
+        .catch(function(){ fail(netMsg||failMsg); if(btn) btn.focus(); });
     });
   }
 
-  ajax('join-form','join-thanks','join-error-wrap','Request my founding place',
+  ajax('join-form','join-thanks','join-error-wrap','Count me in',
     'Something went wrong. Please call (352) 290-3530 and we\u2019ll add you ourselves.',
     function(form){
-      var n=form.querySelector('#firstname'), p=form.querySelector('#phone');
+      var n=form.querySelector('#name'), p=form.querySelector('#phone'), e=form.querySelector('#email');
       if(n&&!n.value.trim()){ n.focus(); return ' '; }
       if(p&&!p.value.trim()){ p.focus(); return ' '; }
+      if(e&&(!e.value.trim()||!e.checkValidity())){ e.focus(); return 'Please enter your email address.'; }
       return null;
-    });
-
-  ajax('vote-form','vote-thanks','vote-error-wrap','Send my vote',
-    'Something went wrong. Please try again.',
-    function(form,data){
-      if(!data.get('most_wanted') && !String(data.get('other_idea')||'').trim())
-        return 'Please pick one, or tell us your own idea.';
-      return null;
-    });
+    },
+    'We couldn\u2019t reach the server. Please call (352) 290-3530 and we\u2019ll add you ourselves.');
 })();

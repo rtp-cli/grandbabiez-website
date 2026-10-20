@@ -1,5 +1,19 @@
 {
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/why", "destination": "/", "statusCode": 301 },
+    { "source": "/why.html", "destination": "/", "statusCode": 301 },
+    { "source": "/whats-coming", "destination": "/", "statusCode": 301 },
+    { "source": "/whats-coming.html", "destination": "/", "statusCode": 301 },
+    { "source": "/what-changes", "destination": "/", "statusCode": 301 },
+    { "source": "/what-changes.html", "destination": "/", "statusCode": 301 },
+    { "source": "/trust", "destination": "/", "statusCode": 301 },
+    { "source": "/trust.html", "destination": "/", "statusCode": 301 },
+    { "source": "/safety", "destination": "/parent-notice.html", "statusCode": 301 },
+    { "source": "/safety.html", "destination": "/parent-notice.html", "statusCode": 301 },
+    { "source": "/join", "destination": "/#founding", "statusCode": 301 },
+    { "source": "/join.html", "destination": "/#founding", "statusCode": 301 }
+  ],
   "rewrites": [
     {
       "source": "/support",

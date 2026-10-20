@@ -49,3 +49,38 @@ input[type="radio"]{accent-color:#C56B4A;width:1.15rem;height:1.15rem}
   header .striplink span{white-space:normal!important}
   header > div:nth-of-type(2) img{height:36px!important;max-width:46vw}
 }
+
+/* ---- slice 7: compact sticky header on phones; every selector starts at header, none reach main or footer ---- */
+@media (max-width:30rem){
+  header > div:first-child > div{row-gap:.15rem!important;padding-top:.25rem!important;padding-bottom:.25rem!important}
+  header > div:first-child > div > span:first-child{font-size:.78rem!important}
+  header > div:nth-of-type(2){padding-top:.5rem!important;padding-bottom:.35rem!important}
+  header > div:nth-of-type(2) > div{flex:1 1 0!important;min-width:0!important;justify-content:flex-end}
+  header > div:nth-of-type(2) .btn-primary{flex:0 1 auto;min-width:0;padding:.3rem .7rem!important;font-size:.84rem!important;line-height:1.2;text-align:center;white-space:normal}
+  header #menu-btn{padding:.3rem .65rem!important}
+  html{scroll-padding-top:3rem}
+}
+
+/* ---- one-line header: logo, nav and Join share a row on wide screens; Menu button below that; strip kept on one line on tablets ---- */
+@media (min-width:48.01rem) and (max-width:77.99rem){
+  #menu-btn{display:inline-flex;align-items:center}
+  #gb-navwrap{display:none}
+  #gb-navwrap.open{display:block}
+  #gb-nav{flex-direction:column;align-items:stretch}
+}
+@media (min-width:40rem) and (max-width:64rem){
+  header > div:first-child > div{padding-left:1rem!important;padding-right:1rem!important;gap:.5rem!important;flex-wrap:nowrap!important}
+  header > div:first-child > div > span:first-child{font-size:.76rem!important}
+  header .striplink{font-size:.78rem!important}
+  header > div:first-child > div > div{gap:.35rem!important}
+}
+@media (min-width:78rem){
+  header{--gx:clamp(1.25rem,5vw,4rem);--edge:calc(max(0px,(100% - 78rem)/2) + var(--gx));display:flex;flex-wrap:wrap;align-items:center}
+  header > div:first-child{flex:0 0 100%}
+  header > div:nth-of-type(2){display:contents!important}
+  header > div:nth-of-type(2) > a{order:1;margin:.7rem 0 .6rem var(--edge)}
+  #gb-navwrap{order:2;flex:1 1 0;min-width:0;padding:0!important;margin:.35rem 1rem .25rem 2rem!important;max-width:none!important}
+  #gb-nav{margin-left:0!important}
+  header .navlink{padding-left:.6rem!important;padding-right:.6rem!important}
+  header > div:nth-of-type(2) > div{order:3;margin:.7rem var(--edge) .6rem 0}
+}
