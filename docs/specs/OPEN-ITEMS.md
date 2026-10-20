@@ -9,10 +9,10 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | 1 | Hero, "Private spaces" tab lede | Copy says "weekly prompts". The app sends prompts daily (develop 4466a20). | Kept verbatim. Client to confirm. |
 | 2 | Join band | "No Charge for 3 years". The app has a 30-day trial and no 3-year offer. Live terms say "currently free". Store/legal risk. | Kept verbatim. Decide before merge. |
 | 3 | Demo keyboard | Tabs work with Tab + Enter. No arrow-key navigation between tabs. | Low priority. Not changed. |
-| 4 | Header strip | "A" / "A+" buttons (34px) and the phone link (36px) are under 44px. Copied unchanged from the existing research.html header. | Pre-existing, all pages. Not changed. |
-| 5 | Header/footer | Join band and "Become a founding family" link to `index.html` (no `#founding`, `#how` yet). Switch in slices 2-3. | Pending slices 2-3. |
-| 6 | Footer | Built from the client's legacy-demo footer: no Terms or Support link. | Per instruction. |
-| 7 | Spec 07 | Lists `privacy.html` among pages to edit. Legal pages must not be edited. | Needs revising before slice 7. |
+| 4 | Header strip | "A" / "A+" buttons (34px) and the phone link (36px) are under 44px. Copied unchanged from the existing research.html header. | Pre-existing, all pages. Slice 7: not changed (A/A+ still 34px, phone still 36px; Join, Menu and nav links stay 44px or more). (was: Pre-existing, all pages. Not changed.) |
+| 5 | Header/footer | Join band and "Become a founding family" link to `index.html` (no `#founding`, `#how` yet). Switch in slices 2-3. | RESOLVED (slice 7): header Join now links `index.html#founding`, nav "How it works" links `index.html#how-it-works`. (was: Pending slices 2-3.) |
+| 6 | Footer | Built from the client's legacy-demo footer: no Terms or Support link. | RESOLVED (slice 7): Terms of Use and Support added to the single-row footer (dev request). Phone kept, no email (client footer has none). (was: Per instruction.) |
+| 7 | Spec 07 | Lists `privacy.html` among pages to edit. Legal pages must not be edited. | RESOLVED (slice 7): only header and footer changed; `<main>` of privacy, terms and support byte-identical (sha256 compared). (was: Needs revising before slice 7.) |
 
 ## Slice 2: index.html
 
@@ -41,7 +41,7 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | 23 | Founding form | The old join form fields (first name, grandchildren, neighbourhood, states, feedback, why) are no longer collected. Exports change shape. | Noted. |
 | 24 | `script.js` | Deliberate differences from the client script: Formspree's own error text is not shown (fixed fallback message only); after a failed send, focus returns to the submit button; a blank validation message keeps the alert hidden. | Deliberate. |
 | 25 | `join.html` | Shares `#join-form` with the new block. Its failure label now reads "Count me in". Page is deleted in slice 8. | Accepted. |
-| 26 | Footer | Footer "Join the first 100" still links to `join.html` (slice 7). The spec's expected grep (header only) was wrong. | Pending slice 7. |
+| 26 | Footer | Footer "Join the first 100" still links to `join.html` (slice 7). The spec's expected grep (header only) was wrong. | RESOLVED (slice 7): footer "Join the founding 100" links `index.html#founding`; no footer links to `join.html`. (was: Pending slice 7.) |
 | 27 | Founding steps | Step 2: "A parent says yes before a grandchild joins." The site has no mechanism for this yet. | Kept verbatim. Client to confirm. |
 
 ## Slice 4: research.html and ideas.html
@@ -70,11 +70,11 @@ Client text ported character for character. Nothing below was edited to fix it.
 | 40 | 2.1 vs 2.2/6.3 | The policy says an adult profile may include a "birthday" and, for a Child, an "Age range" (6.3). The client's parent notice says "their first name, age, and interests". "Age range" vs "age" is not the same promise. | Kept verbatim. Client to confirm which is right. |
 | 41 | Full policy vs part one | "Grandbabiez, Inc." is named 5 times (full policy, 6.1) while the intro line and "How to reach us" use `[Grandbabiez legal entity name]`. | Kept verbatim. Client to confirm the legal name. |
 | 42 | 2.1, 3.3 | "free-trial dates", "Start and end free trials". The home page offers "No Charge for 3 years" (items 2, 8, 15). | Kept verbatim. Decide before merge. |
-| 43 | Footers on other pages | Footers still list "Terms of Use" (slice 7 and slice 8). | Pending. |
+| 43 | Footers on other pages | Footers still list "Terms of Use" (slice 7 and slice 8). | RESOLVED (slice 7): every footer now links Terms of Use (`terms.html`) and Support (`support.html`). Terms page is kept (D10), so item 37 is moot. (was: Pending.) |
 | 44 | Text not in the client | None of these appear in the client text: the 50-cent charge, "date of birth", "support@grandbabiez.com". | No action. |
 | 45 | `privacy.html` SVG | Same illustration as research.html. Fills outside the palette, kept: `#8C5A38`, `#B5544A`, `#D8A87E`, `#EAC7A4`, `#5f7a66`. | Left as is. |
 | 46 | Head | Title and description follow the client's wording with curly apostrophes; og:title and og:description updated to match. Body text keeps the client's mix of straight (`&#39;`) and curly apostrophes. | Deliberate. |
-| 47 | Spec 07 | Item 7 above is now moot for `privacy.html`: legal pages are no longer off limits, but slice 7 still must not touch the policy text. | Revise spec 07. |
+| 47 | Spec 07 | Item 7 above is now moot for `privacy.html`: legal pages are no longer off limits, but slice 7 still must not touch the policy text. | RESOLVED (slice 7): policy text untouched; spec 07 facts corrected (see items 61-62). (was: Revise spec 07.) |
 
 ### Placeholders, one per occurrence (launch blockers)
 
@@ -139,7 +139,7 @@ Client note ported word for word. Nothing below was edited to fix it.
 | 56 | Step circles | Client weight 700 on the numbers; the repo maximum is 600, so they use 600. Only styling changed. | Deliberate. |
 | 57 | Page top | The client's centred logo link is not added. The repo header already has the logo, so the page opens with the illustration. | Deliberate. |
 | 58 | `parent-notice.html` SVG | Same illustration as ideas.html. Fills outside the palette, kept: `#D8A87E`, `#EAC7A4`. | Left as is. |
-| 59 | Footer, slice 7 | The footer's "For parents" link must point to `parent-notice.html`, not `safety.html`. | Slice 7. |
+| 59 | Footer, slice 7 | The footer's "For parents" link must point to `parent-notice.html`, not `safety.html`. | RESOLVED (slice 7): "For parents" points to `parent-notice.html` in every footer. (was: Slice 7.) |
 | 60 | Head | Title "A note for parents — Grandbabiez" and the client's description with curly apostrophes; og tags match. | Deliberate. |
 
 ### Placeholders, one per occurrence (launch blockers)
@@ -156,3 +156,19 @@ Client note ported word for word. Nothing below was edited to fix it.
 | 8 | Questions? | `[company mailing address]` |
 
 Totals: 8 occurrences, 6 distinct. Not shipped: `href="[consent link]"`.
+
+## Slice 7: shared header and footer
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 61 | Spec 07 facts | Headers were NOT identical on all eight pages: `legacy-demo.html` had its own layout (nav inside the logo row, no Home or Legacy demo, no `aria-current`, Join to `index.html`). The spec's footer variants were two; there are three (full, parent-notice minimal, legacy-demo single row). Its retired-link grep omitted `safety.html`. | Corrected in slice 7. |
+| 62 | Header, all pages | One header template on all eight pages: offer text in the strip, nav Home, How it works, Legacy demo, Research, Ideas, Privacy, button "Join the founding 100" to `index.html#founding`. Strip label is now the client's "Questions? Call a real person:" (was "Talk to a person:"). | Done. Confirm with the dev. |
+| 63 | Footers | Full footer on index, research, ideas, privacy, terms, support (terms and support have no client page, so they take the full one). Minimal on parent-notice. Single row on legacy-demo. Explore list is the client's, with "Ideas & thanks". Footer links `support.html` (was `support`; `vercel.json` still rewrites `/support`). | Done. |
+| 64 | Footer copyright | Full and single-row footers say "Grandbabiez, Inc."; the client's parent-notice footer says "Grandbabiez." Kept verbatim. The legal name is a placeholder in the policy (item 41). | Client to confirm. |
+| 65 | Footer text | New client line "Grandbabiez(TM) — now inviting our first 100 founding families. Made in The Villages, Florida." The rest of the site says "Central Florida". | Kept verbatim. Client to confirm. |
+| 66 | `legacy-demo.html` | The page has no `<body>` tag (`</head>` is followed by the skip link; `</body>` exists). Browsers insert one. | Not fixed (outside header and footer). Fix separately. |
+| 67 | Header height at 390x844 | Before slice 7 (index): 162px at A, 179px at A+. Naive new header: 246px (29.1%) at A, 324px (38.4%) at A+. After the `styles.css` block: 161px (19.1%) at A, 222px (26.3%) at A+. 768px (162/174) and 1440px (170/185) unchanged. legacy-demo was 246/324 before. | Done, measured in headless Chromium. |
+| 68 | `styles.css` | One new `@media (max-width:30rem)` block, every selector starts at `header` (strip spacing and offer font size, logo row padding, Menu and Join sizing with the Join label allowed to wrap, `html{scroll-padding-top:3rem}`). Media queries use the browser's default font size, so A+ (root 20px) does not move the 30rem breakpoint; only `rem` values inside the block scale. | Done. |
+| 69 | Anchors | `#how-it-works`, `#legacy-demo-preview`, `#founding` use `scroll-margin-top:9rem` (144px at A, 180px at A+). At 390px the header is taller, so `scroll-padding-top:3rem` (48px at A, 60px at A+) was added; headings land 18-31px below the header. At 1440px (no change allowed) the section edge sits 26px (A) and 4px (A+) under the header; headings stay fully visible because of section padding. | Done. |
+| 70 | `legacy-demo.html` tab switch | The page script (`window.scrollTo` to `nav.tabs`, outside header/footer/main) puts the tab bar at the top of the window after a tab change from deep scroll, so it is fully hidden under the sticky header (161px at A, 222px at A+ at 390px; also at 1440px). Not caused by slice 7 (the old header was 246/324px there), and `scroll-padding` does not affect `scrollTo`. Story selection (`scrollIntoView`) is fine. | Not fixed. Needs a one-line script change: subtract the header height. |
+| 71 | Keyboard order | At 1440px the Join button comes before the nav links in Tab order (DOM order, as before). | Pre-existing. Not changed. |
