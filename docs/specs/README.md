@@ -2,58 +2,58 @@
 
 Branch: `content/founding-100-update`. One commit per slice, in the order below.
 
-## Source of truth
-- Client files: `reference/grandbabiez_website/` (local only, gitignored, never deployed).
-- Port **copy and structure** verbatim: headings, paragraphs, labels, placeholders, alt text, meta title/description.
-- The client's markup is class-based with a full stylesheet pasted into a `<style>` block on every page. **Do not copy that.** Re-express each element in this repo's conventions.
+## Scope rules (apply to every slice, and override anything else)
+1. **Legal pages are pasted from the client's files, never rewritten.** `privacy.html` and `parent-notice.html` take the client's text word for word, including every `[bracketed]` placeholder. Do not summarize, reorder, tidy, fill in or "improve" any of it. Problems you notice go in `OPEN-ITEMS.md`, not into the text. The client's design has no Terms or Support page: those pages are removed (slice 8) and nothing links to them.
+2. **Client copy is ported verbatim.** No summarizing, shortening, rewording, or copy of your own. Where the repo page and the client page differ in content, the client page wins.
+3. **Styling stays the repo's.** Inline styles, Lexend Deca, the existing palette, existing hover classes. Never copy client classes, client `<style>` blocks, client fonts, or client CSS variables.
+4. **Never POST to the live Formspree endpoint**, not even once, not even for testing.
 
-## Translation rules (apply to every slice)
-1. **Styling stays as in the repo.** Element styling is inline `style` attributes; `styles.css` holds only resets, `.hv1`-`.hv7` hover classes, the two media queries and `aria-pressed` states. Copy the inline patterns from an equivalent existing section (eyebrow, h1/h2, card, section wrapper, button) instead of inventing new ones.
-2. **Type:** Lexend Deca only (300/400/500/600). Do NOT add General Sans, Noto Sans, Fontshare or any new font host.
-3. **Palette:** only the colours in `CLAUDE.md`. Ignore any other hex in client files.
-4. **Do not copy** client `<style>` blocks, `.wrap/.btn/.topbar/.site-header` classes, `data-textsize`, or the client `styles.css`.
-5. **Assets** go in `assets/`. Client files sit flat in the zip root (`logo.png`, `photo-grandmother.jpg`, `photo-grandfather.jpg`). Some client pages embed images as base64 `data:` URIs: decode these to files in `assets/`, never inline base64. Use real `width`/`height`, meaningful `alt`, `loading="lazy"` below the fold.
-6. **Scripts:** one `script.js`. Move any client inline `<script>` logic into it (guard by element id so it is a no-op on other pages).
-7. **Links:** never link to a page or anchor that does not exist at that commit. After each slice run the link check below.
-8. **Placeholders:** client text in `[brackets]` stays exactly as written. Never invent legal wording, names, addresses, periods or vendor names. List every bracket you touch in `docs/specs/OPEN-ITEMS.md`.
-9. **Test** at 390px width at default and at A+ text size.
-10. Header/footer markup is duplicated per page: change shared parts with a script across all surviving pages.
+## Source of truth
+- Client files: `reference/` (local only, gitignored, never deployed). The PDF summary of changes is only a summary: always diff the real client page against the repo page.
+
+## Translation rules
+1. Element styling is inline `style` attributes; `styles.css` holds only resets, `.hv1`-`.hv7` hover classes, the two media queries and `aria-pressed` states. Copy the inline pattern from an equivalent existing section.
+2. Lexend Deca only (300/400/500/600). No new font host. Client 700 weights become 600.
+3. Palette only as in `CLAUDE.md`. Client SVG art may use other colours: copy it as is and log the off-palette fills.
+4. Illustrations in the client files are mostly inline SVG, not image files. Copy SVG verbatim including `aria-label`.
+5. Assets go in `assets/`. Never inline base64.
+6. One `script.js`. No inline `<script>` in pages.
+7. Anchor ids: the home page uses `#how-it-works` and `#founding`. The client's `#how` does not exist here; use `#how-it-works`.
+8. Never link to a page or anchor that does not exist at that commit.
+9. Placeholders: client text in `[brackets]` stays exactly as written. List every one in `OPEN-ITEMS.md`.
+10. Test at 390px and 768px, at default and A+ text size.
+11. Header/footer markup is duplicated per page: change shared parts with a script, never by hand.
 
 ## Link check
 ```
 for f in *.html; do grep -oE 'href="[^"#:]+(#[^"]*)?"' "$f" | sed -E 's/href="([^"#]+).*/\1/' | sort -u | while read l; do [ -e "$l" ] || echo "$f -> MISSING $l"; done; done
 ```
+Known baseline noise: the `support` rewrite warning.
 
-## Slice order (each has a spec file)
-| # | Spec | Commit message |
-|---|------|----------------|
-| 0 | (setup) | `chore: ignore reference/ and keep docs/ out of deploy` |
-| 1 | `01-legacy-demo.md` | `feat(legacy-demo): add Whitaker family demo page` |
-| 2 | `02-homepage.md` | `feat(home): new headline, how-it-works loop, heirloom and demo preview` |
-| 3 | `03-signup-pricing.md` | `feat(home): add founding pricing and founding-family signup form` |
-| 4 | `04-research-ideas.md` | `feat(research,ideas): add illustrations, two-column studies, remove vote form` |
-| 5 | `05-privacy.md` | `feat(privacy): rewrite with plain-language summary, billing, AI opt-out, SMS terms` |
-| 6 | `06-parent-notice.md` | `feat(parent-notice): rewrite as direct note with three-step consent` |
-| 7 | `07-shared-header-footer.md` | `feat(nav): update shared header and footer, add founding-families banner` |
-| 8 | `08-remove-retired-pages.md` | `chore: remove retired pages and add redirects` |
-| 9 | `09-claude-md-readme.md` | `docs: update CLAUDE.md and README for revised site` |
+## Slice order
+| # | Spec | Status | Commit message |
+|---|------|--------|----------------|
+| 0 | setup | done | `chore: ignore reference/ and keep docs/ out of deploy` |
+| 1 | `01-legacy-demo.md` | done | `feat(legacy-demo): add Whitaker family demo page` |
+| 2 | `02-homepage.md` | done | `feat(home): new headline, how-it-works loop, heirloom and demo preview` |
+| 3 | `03-signup-pricing.md` | done | `feat(home): add founding pricing and founding-family signup form` |
+| 4 | `04-research-ideas.md` | done | `feat(research,ideas): add illustrations, two-column studies, remove vote form` |
+| 5 | `05-privacy.md` | next | `feat(privacy): rewrite with plain-language summary, billing, AI opt-out, SMS terms` |
+| 6 | `06-parent-notice.md` | | `feat(parent-notice): rewrite as direct note with three-step consent` |
+| 7 | `07-shared-header-footer.md` | | `feat(nav): update shared header and footer, add founding-families banner` |
+| 8 | `08-remove-retired-pages.md` | | `chore: remove retired pages and add redirects` |
+| 9 | `09-claude-md-readme.md` | | `docs: update CLAUDE.md and README for revised site` |
 
-Why this order: slices 1-6 only link to pages that already exist; slice 7 adds the new nav only after every target exists; slice 8 deletes pages only after nothing links to them.
+Note: the prompts for slices 1-4 said not to edit `privacy.html` or `terms.html`. That rule is superseded by scope rule 1 above (it meant "do not rewrite", not "do not update").
 
-## Setup commit (slice 0)
-```
-.gitignore     + reference/
-.vercelignore  + docs/
-               + reference/
-```
-Vercel serves the repo root, so without `.vercelignore` the specs and client files would be public.
-
-## Open decisions (defaults used unless you say otherwise)
-- **D1 Text size:** client shows one "Larger text" button; default = keep the repo's A / A+ control (65+ audience).
-- **D2 Header:** default = keep the repo header and sticky behaviour; add the offer text "Now inviting our first 100 founding families" to the top strip.
-- **D3 Fonts:** default = Lexend Deca; client's General Sans / Noto Sans not adopted.
-- **D4 Demo data:** `legacy-demo.html` embeds 208 records: 104 `whitaker` and 104 `mendez`. The PDF describes only the Whitaker family. Confirm the Mendez set is unused before dropping it (about half of the 379 KB data block).
-- **D5 Demo palette:** the demo mimics the app and uses its own colours (dark theme, per-person colours). Default = allowed, scoped inside `legacy-demo.html` only.
-- **D6 Dangling reference:** `research.html` still points to the removed "Dose matters" section. Client copy, so flag, don't edit.
-- **D7 Redirect targets** for removed pages: see slice 8; confirm.
-- **D8 Signup form wording:** the client form has no adults-only line and no SMS consent text. Proposed addition in slice 3, needs your OK.
+## Decisions log
+- D1 Text size: keep the repo's A / A+ control.
+- D2 Header: keep the repo header and sticky behaviour; add the offer text to the top strip.
+- D3 Fonts: Lexend Deca only.
+- D4 Demo data: RESOLVED. Both families render in the demo; keep all 208 records.
+- D5 Demo palette: the demo keeps its own app-style palette, scoped to `legacy-demo.html`.
+- D6 Research pointer sentence: RESOLVED. Kept verbatim (it is the client's own sentence) and logged.
+- D7 Redirect targets for removed pages: see slice 8.
+- D8 Signup extras (honeypot, adults-only line): OFF; recommendations only.
+- D10 Terms and Support pages are removed (the client's design has neither). `/terms` redirects to `/privacy.html`, which now carries the subscription, billing and SMS terms.
+- D9 Parent-notice page chrome: the client's notice page has no site nav and a minimal footer. Default: keep the repo header; use the client's footer for that page. Confirm with the client.
