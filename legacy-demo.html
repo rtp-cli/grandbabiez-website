@@ -204,6 +204,7 @@
 @keyframes fade{from{opacity:.4}to{opacity:1}}}
 </style>
 </head>
+<body>
 <a class="skip" href="#main">Skip to content</a>
 <div style="background:#FBF5EC; color:#2B2621; font-family:'Lexend Deca',system-ui,sans-serif; line-height:1.6;">
 
@@ -356,7 +357,7 @@ $("#tabs").innerHTML=TABS.map(([id,l])=>`<button class="tab" role="tab" id="t-${
 function show(id,push=true){
   TABS.forEach(([t])=>{$("#v-"+t).hidden=t!==id;$("#t-"+t).setAttribute("aria-selected",t===id)});
   if(push){try{history.replaceState(null,"","#"+id)}catch(e){}}
-  window.scrollTo({top:Math.min(window.scrollY,$("nav.tabs").offsetTop),behavior:"instant"});
+  window.scrollTo({top:Math.min(window.scrollY,$("nav.tabs").offsetTop-$("header").offsetHeight),behavior:"instant"});
 }
 $("#tabs").addEventListener("click",e=>{const b=e.target.closest(".tab");if(b)show(b.id.slice(2))});
 
