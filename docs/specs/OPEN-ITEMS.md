@@ -56,3 +56,68 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | 33 | `research.html` closing button | "Join the first 100" (repo) became "Join our founding circle" (client), linking to `index.html#founding`. | Client copy. |
 | 34 | `ideas.html` | Meta description keeps the repo's curly apostrophes; the client's uses straight ones. Same words. | Deliberate. |
 | 35 | `ideas.html` pets photo | `assets/pets.jpg` and the client's embedded image are the same picture (460x585, no people), differently encoded. Repo file kept. | No action. |
+
+## Slice 5: privacy.html
+
+Client text ported character for character. Nothing below was edited to fix it.
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 36 | Whole policy | 39 `[bracketed]` placeholders, 21 distinct, listed one per line in the table below. Every one is a launch blocker. | Kept verbatim. Client to supply. |
+| 37 | 3.5 "To keep the Services safe and secure" and 5.4 "For legal reasons and to protect people" | "Investigate reports of inappropriate content and enforce our Terms of Service." and "to enforce our Terms of Service". The policy never says "Terms of Use". The Terms page is removed in slice 8, so these point at nothing on the site. | Kept verbatim. Client to confirm. |
+| 38 | Part one, "Children's privacy" | "We extend the same protections to every Child in a family circle, including teens." Teens are named, while the client's parent notice speaks only of a child under 13. | Kept verbatim. Client to confirm. |
+| 39 | Throughout | "weekly" appears 7 times ("a weekly moment", "weekly prompts"). The app sends prompts daily (see item 1). | Kept verbatim. Client to confirm. |
+| 40 | 2.1 vs 2.2/6.3 | The policy says an adult profile may include a "birthday" and, for a Child, an "Age range" (6.3). The client's parent notice says "their first name, age, and interests". "Age range" vs "age" is not the same promise. | Kept verbatim. Client to confirm which is right. |
+| 41 | Full policy vs part one | "Grandbabiez, Inc." is named 5 times (full policy, 6.1) while the intro line and "How to reach us" use `[Grandbabiez legal entity name]`. | Kept verbatim. Client to confirm the legal name. |
+| 42 | 2.1, 3.3 | "free-trial dates", "Start and end free trials". The home page offers "No Charge for 3 years" (items 2, 8, 15). | Kept verbatim. Decide before merge. |
+| 43 | Footers on other pages | Footers still list "Terms of Use" (slice 7 and slice 8). | Pending. |
+| 44 | Text not in the client | None of these appear in the client text: the 50-cent charge, "date of birth", "support@grandbabiez.com". | No action. |
+| 45 | `privacy.html` SVG | Same illustration as research.html. Fills outside the palette, kept: `#8C5A38`, `#B5544A`, `#D8A87E`, `#EAC7A4`, `#5f7a66`. | Left as is. |
+| 46 | Head | Title and description follow the client's wording with curly apostrophes; og:title and og:description updated to match. Body text keeps the client's mix of straight (`&#39;`) and curly apostrophes. | Deliberate. |
+| 47 | Spec 07 | Item 7 above is now moot for `privacy.html`: legal pages are no longer off limits, but slice 7 still must not touch the policy text. | Revise spec 07. |
+
+### Placeholders, one per occurrence (launch blockers)
+
+| # | Section | Placeholder | Status |
+|---|---------|-------------|--------|
+| 1 | Intro (effective date line) | `[Grandbabiez legal entity name]` | Launch blocker. |
+| 2 | Intro (effective date line) | `[company mailing address]` | Launch blocker. |
+| 3 | Who can see it | `[service providers to list]` | Launch blocker. |
+| 4 | How long we keep it | `[retention periods to confirm]` | Launch blocker. |
+| 5 | How to reach us | `[Grandbabiez legal entity name]` | Launch blocker. |
+| 6 | How to reach us | `[company mailing address]` | Launch blocker. |
+| 7 | 2.1 Grandparents, Family Members, and Circle Organizers | `[CONFIRM IMPLEMENTATION]` | Launch blocker. |
+| 8 | 2.1 Grandparents, Family Members, and Circle Organizers | `[PAYMENT PROCESSOR]` | Launch blocker. |
+| 9 | 4.2 How Family Content is processed | `[NAME AI PROVIDER(S)]` | Launch blocker. |
+| 10 | 4.2 How Family Content is processed | `[CONFIRM WITH VENDORS]` | Launch blocker. |
+| 11 | 4.3 Training | `[CONFIRM — or describe opt-in program]` | Launch blocker. |
+| 12 | 4.5 Turning AI features off | `[CONFIRM CONTROL EXISTS]` | Launch blocker. |
+| 13 | 5.2 With service providers | `[LIST SPECIFIC PROVIDERS OR LINK TO A LIST]` | Launch blocker. |
+| 14 | 6.1 Operator contact information | `[MAILING ADDRESS]` | Launch blocker. |
+| 15 | 6.1 Operator contact information | `[ZIP]` | Launch blocker. |
+| 16 | 6.1 Operator contact information | `[LIST ANY OTHER OPERATORS, OR STATE THAT NO OTHER OPERATORS COLLECT CHILDREN'S INFORMATION THROUGH THE SERVICES]` | Launch blocker. |
+| 17 | 6.2 How a Child joins | `[X]` | Launch blocker. |
+| 18 | 6.2 How a Child joins | `[CONSENT METHOD — e.g., small credit-card authorization, signed form, video call, or government ID check with immediate deletion]` | Launch blocker. |
+| 19 | 6.6 Retention of Children's information | `[X]` | Launch blocker. |
+| 20 | 8.5 Phone calls | `[CONFIRM]` | Launch blocker. |
+| 21 | 8.6 Email tracking | `[CONFIRM]` | Launch blocker. |
+| 22 | 9.2 Requests you can make to us | `[CONFIRM FORMAT]` | Launch blocker. |
+| 23 | 9.3 What happens when you delete your account | `[X]` | Launch blocker. |
+| 24 | 9.3 What happens when you delete your account | `[CONFIRM OPTION]` | Launch blocker. |
+| 25 | 11. Security | `[CONFIRM]` | Launch blocker. |
+| 26 | 12. Retention | `[X]` | Launch blocker. |
+| 27 | 12. Retention | `[X]` | Launch blocker. |
+| 28 | 12. Retention | `[X]` | Launch blocker. |
+| 29 | 12. Retention | `[X]` | Launch blocker. |
+| 30 | 12. Retention | `[X]` | Launch blocker. |
+| 31 | 12. Retention | `[X]` | Launch blocker. |
+| 32 | 12. Retention | `[X]` | Launch blocker. |
+| 33 | 12. Retention | `[X]` | Launch blocker. |
+| 34 | 12. Retention | `[X]` | Launch blocker. |
+| 35 | 12. Retention | `[X]` | Launch blocker. |
+| 36 | 13. Where information is stored | `[CONFIRM ALL PROVIDERS ARE U.S.-BASED]` | Launch blocker. |
+| 37 | 15. Changes to this policy | `[30]` | Launch blocker. |
+| 38 | 16. Contact us | `[MAILING ADDRESS]` | Launch blocker. |
+| 39 | 16. Contact us | `[ZIP]` | Launch blocker. |
+
+Totals: 39 occurrences, 21 distinct.
