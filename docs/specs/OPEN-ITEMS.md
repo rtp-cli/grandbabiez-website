@@ -51,7 +51,7 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | 28 | `ideas.html` | Roadmap vote form removed (and its `script.js` call). Roadmap voting no longer exists; ideas now arrive by email (`greg@grandbabiez.com`) or at signup. README and CLAUDE.md still mention the vote form. | Update in slice 9. |
 | 29 | `research.html`, "Grandparents" intro | "…with one important condition we're honest about below." The "Dose matters" caveat section it points to is removed (as in the client page), so the sentence points at nothing. The client page has the same sentence. | RESOLVED (slice 10): the section ("The one honest caveat / Dose matters — and that's the whole point.") is restored from git history (removed in 8f0933c, restored byte for byte from 8f0933c^) at the dev's request. The client's design removed it. Tell the client. (was: Kept verbatim. Client to confirm.) |
 | 30 | `research.html`, `ideas.html` | Client SVGs kept as written. Fills outside the palette: research `#5F7A66`, `#8C5A38`, `#B5544A`, `#D8A87E`, `#EAC7A4`; ideas `#D8A87E`, `#EAC7A4`. | Left as is. Decide whether to recolour. |
-| 31 | `ideas.html` credits | Real first names and places: Fatima (Lahore, Pakistan); Roseanne (Pinellas County); Mark (The Villages, FL); Cheryl (The Villages, FL); "In honor of Barbara & Dean"; "In honor of Rick, Scott, and all of the others"; "In honor of Raider, Mika, and Luka" (the huskies). | Not edited. Confirm the client has permission for each. |
+| 31 | `ideas.html` credits | Real first names and places: Fatimah (Lahore, Pakistan; see #88); Roseanne (Pinellas County); Mark (The Villages, FL); Cheryl (The Villages, FL); "In honor of Barbara & Dean"; "In honor of Rick, Scott, and all of the others"; "In honor of Raider, Mika, and Luka" (the huskies). | Not edited. Confirm the client has permission for each. |
 | 32 | `research.html` closing buttons | Client links `index.html#how`, which does not exist on the home page. Used `index.html#how-it-works`. | Slice 7: nav links must use `#how-it-works`, not `#how`. |
 | 33 | `research.html` closing button | "Join the first 100" (repo) became "Join our founding circle" (client), linking to `index.html#founding`. | Client copy. |
 | 34 | `ideas.html` | Meta description keeps the repo's curly apostrophes; the client's uses straight ones. Same words. | Deliberate. |
@@ -229,3 +229,9 @@ Target-top gap below the header after the fix (px; milestone / recipe / story se
 | 768 | -112 / -112 / -112 | +48 / +48 / +48 | -162 / -162 / -162 | +42 / +43 / +43 |
 | 1440 | -115 / -116 / n/a | +45 / +44 / n/a | -126 / -126 / n/a | +44 / +44 / n/a |
 
+
+## Fix #C: credit spelling (ideas.html)
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 88 | `ideas.html` line 110, credit "Suggested by Fatimah — Lahore, Pakistan" | Deliberate deviation from the client's text, requested by the dev. The client's page (`reference/ideas.html` line 364) reads "Fatima". Only that one word changed. Item 31's credit list now says Fatimah. | Client to confirm the spelling. |
