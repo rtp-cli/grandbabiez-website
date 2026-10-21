@@ -243,3 +243,17 @@ Target-top gap below the header after the fix (px; milestone / recipe / story se
 | 89 | `index.html` line 69, hero lead paragraph | Deliberate deviation from the client's zip: the first sentence now reads "grandbabiez™ is a mobile app that creates a unique, private space just for you and each of your grandchildren." Requested by Greg in chat on 21/10 (issue #9). Five words added ("is a mobile app that"); the `&trade;` entity and the comma in "unique, private" kept. The issue's quote ("grandbabies", no ™, no comma) is shorthand. | Client to confirm. |
 | 90 | `index.html` lines 7 and 16, `<meta name="description">` and `og:description` | Still say "Grandbabiez creates a unique, private space for you and each of your grandchildren…" without "is a mobile app that". Left unchanged on purpose (owner's decision). No twitter meta tags exist. | Owner to confirm. |
 | 91 | Other places the original sentence appears | None. The hero paragraph and the two meta tags above are the only hits for "creates a unique" in any page, `script.js`, README or CLAUDE.md. | No action. |
+
+## Fix #8: design tokens (spec 14)
+
+Baseline for "deployed site" = 283af5c (the merge-base with main is now the PR #4 merge). Style values only; no text, structure or links changed.
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 92 | `index.html`, `parent-notice.html`, `legacy-demo.html` footer CTA | Aligned to the nearest 283af5c token: font-size (incl. clamp), line-height, border-radius, one rgba. 38 values changed across 3 pages. | Done. |
+| 93 | `index.html` "Built so the least confident…" h2 (clamp 1.8rem,4vw,2.6rem) and `legacy-demo.html` CTA h2 (clamp 1.9rem,4.2vw,2.6rem) | Nearest baseline clamp has a larger maximum (2.7rem / 2.9rem). At 1440px and A+ the index h2 wrapped from 2 to 3 lines and the CTA h2 from 1 to 2, so both changes were reverted. | Not aligned. Left as is. Decide whether to accept the larger headings. |
+| 94 | `research.html`, `ideas.html`, `parent-notice.html` SVG illustrations | Colours outside the deployed palette: `#EAC7A4`, `#D8A87E`, `#8C5A38`, `#5F7A66`, `#B5544A`. Client artwork. | Exempt. Recolouring needs client approval. |
+| 95 | `legacy-demo.html` `#demo` styles and demo script | Own palette (`--honey-soft #FBEBC8`, `--sage-soft #E3ECE5`, `--blush-soft #F8E3DF`, `--clay-ink #A4512F`, ten `--p-*` person colours, canvas colours such as `#2F8A8A`, `#4F6F8F`, `#7A64B0`), shadow, radii (22px, 8px), rem sizes, tracking and line-heights. Decision D5. | Exempt. Aligning needs client approval. |
+| 96 | `index.html` lines 122, 131, 138, 145, 158, 226-230, 232, 292, 323 | Values that exist at 283af5c only on pages since removed: line-height 1.2 (what-changes), letter-spacing .12em (what-changes), border-radius 18px (join), font-size 1.5rem (what-changes). | Counted as allowed (deployed site's own values). Listed for visibility. |
+| 97 | `index.html`, `parent-notice.html`, `legacy-demo.html` | New component paddings, max-widths (19rem, 40rem, 90%, 340px, 440px) and section paddings have no 283af5c equivalent. | Deferred. Not changed. |
+| 98 | `legacy-demo.html` lines 320-524 | The demo app runs from an inline `<script>`; scope rule 6 says no inline scripts. | Noted only. Not changed. |
