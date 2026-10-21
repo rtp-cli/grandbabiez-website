@@ -192,3 +192,40 @@ Totals: 8 occurrences, 6 distinct. Not shipped: `href="[consent link]"`.
 | 79 | Slice 10 gate | End-of-branch gate results (privacy and parent-notice text, terms and support `<main>`, deleted-page references, COPPA grep, placeholders, header and footer) are in the slice 10 report, not repeated here. | See report. |
 | 80 | `parent-notice.html` vs `privacy.html` | The client's parent notice (client text, 8 `[bracketed]` placeholders, inert consent button) now sits next to the ORIGINAL privacy policy (`privacy.html` reverted to base 283af5c), so the two pages describe things differently: age vs date of birth, the consent method, the 50-cent charge, SMS and AI text. | Owner and dev to decide whether to revert `parent-notice.html` as well. |
 | 81 | `legacy-demo.html` demo `<style>`, lines 124-125 | Issue #5. The `#demo .story-body` rule was truncated to `#demo .story-` and ran into `.legacy{...}`, so the browser read the selector `#demo .story- .legacy`. Expanded stories and Lighthouse Cat chapters lost padding, line height and paragraph breaks (`white-space:pre-line`); the "Kept for the heirloom" footer lost its flex layout and dashed border. Restored `#demo .story-body{...}` and `#demo .legacy{...}` on their own lines (client rules, px to rem, `--display` is Lexend Deca). Integrity check: no other rule damaged. Slice 1 and 10 checks missed it. | RESOLVED (this fix). |
+
+## Fix #B: scroll targets under the sticky header (legacy-demo.html)
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 82 | Demo `<style>`, new `scroll-margin-top:var(--sm)` on `#demo .ex` and `#demo .page` | Milestone, recipe and story-select scrolls (`scrollIntoView({block:"start"})`) put the target at y=0, 112-280px under the header. `--sm` is set per measured header-height step, A and A+ separately (A+ is root 20px and the header has px-sized parts). A: 9.25rem to 480px, 14.25rem 481-530px, 10rem from 531px. A+: 10.25rem, then 8rem from 413px, 15.5rem 481px, 12.5rem 546px, 10.25rem 706px, 8rem 775px, 10.5rem 1025px, 8.5rem 1139px. The A+ rules use `html:has(#size-large[aria-pressed="true"])`; without `:has` support A+ falls back to the A values. Result: the target's top edge sits 9-48px below the header at every width from 360 to 1600px, A and A+ (1px sweep, 2,482 checks, none outside 8-50px). Script, `<main>` and `styles.css` unchanged. | Fixed. Dev to eyeball. |
+| 83 | Same | The "heading 8-50px below the header" budget cannot hold at every width: the heading sits 19-88px inside its target (milestone/recipe `.ex`: 19-30px, up to 70px (A) / 88px (A+) at 390px when the title wraps; `#spage` h3: 48px (390 A) to 88px (1440 A+)). Budget applied to the target's top edge; the heading is never hidden (smallest heading gap +31px). | Decide if a tighter heading budget is wanted (it would hide the card's top edge). |
+| 84 | Spec 12 facts | Spec says there are three `scrollIntoView` calls and a separate recipe handler. There are two (`[data-ex]` click, `innerWidth<860` story select). Recipe cards (`.rcard[data-ex]`) and milestone cards share the one `[data-ex]` handler. | Noted. |
+| 85 | Demo script | Story select scrolls only when `innerWidth<860`; the stacked layout is CSS `max-width:860px`. At exactly 860px the reader is stacked and the scroll does not run. | Not changed (script untouched). |
+| 86 | `#cpage` | The Lighthouse Cat page also has class `.page` and now gets the margin; no scroll call targets it. | Harmless. |
+| 87 | Item #67 | The 170/185 (1440px) and 162/174 (768px) header heights are out of date after the desktop header fix. | Superseded by the table below. |
+
+Header height, `legacy-demo.html` (px, `header` bounding box, headless Chromium):
+
+| Width | A | A+ |
+|-------|---|----|
+| 390 | 161 | 222 |
+| 480 | 161 | 181 |
+| 520 | 201 | 280 |
+| 640 | 115 | 235 |
+| 768 | 112 | 162 |
+| 900 | 116 | 140 |
+| 1024 | 116 | 127 |
+| 1247 | 116 | 127 |
+| 1248 | 115 | 158 |
+| 1440 | 115 | 126 |
+
+Steps between those widths (1px sweep): A changes at 363, 481, 531, 640, 758, 769, 1248px. A+ changes at 382, 413, 450, 481, 546, 640, 698, 706, 743, 769, 775, 943, 1025, 1139, 1248, 1328px.
+
+Target-top gap below the header after the fix (px; milestone / recipe / story select; story select does not scroll at 860px and up):
+
+| Width | A before | A after | A+ before | A+ after |
+|-------|----------|---------|-----------|----------|
+| 390 | -114 / -114 / -161 | +34 / +34 / +35 | -162 / -161 / -222 | +44 / +44 / +44 |
+| 768 | -112 / -112 / -112 | +48 / +48 / +48 | -162 / -162 / -162 | +42 / +43 / +43 |
+| 1440 | -115 / -116 / n/a | +45 / +44 / n/a | -126 / -126 / n/a | +44 / +44 / n/a |
+
