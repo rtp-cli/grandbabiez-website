@@ -51,7 +51,7 @@ Client copy kept verbatim, flagged for the client or a decision-maker. Nothing h
 | 28 | `ideas.html` | Roadmap vote form removed (and its `script.js` call). Roadmap voting no longer exists; ideas now arrive by email (`greg@grandbabiez.com`) or at signup. README and CLAUDE.md still mention the vote form. | Update in slice 9. |
 | 29 | `research.html`, "Grandparents" intro | "…with one important condition we're honest about below." The "Dose matters" caveat section it points to is removed (as in the client page), so the sentence points at nothing. The client page has the same sentence. | RESOLVED (slice 10): the section ("The one honest caveat / Dose matters — and that's the whole point.") is restored from git history (removed in 8f0933c, restored byte for byte from 8f0933c^) at the dev's request. The client's design removed it. Tell the client. (was: Kept verbatim. Client to confirm.) |
 | 30 | `research.html`, `ideas.html` | Client SVGs kept as written. Fills outside the palette: research `#5F7A66`, `#8C5A38`, `#B5544A`, `#D8A87E`, `#EAC7A4`; ideas `#D8A87E`, `#EAC7A4`. | Left as is. Decide whether to recolour. |
-| 31 | `ideas.html` credits | Real first names and places: Fatima (Lahore, Pakistan); Roseanne (Pinellas County); Mark (The Villages, FL); Cheryl (The Villages, FL); "In honor of Barbara & Dean"; "In honor of Rick, Scott, and all of the others"; "In honor of Raider, Mika, and Luka" (the huskies). | Not edited. Confirm the client has permission for each. |
+| 31 | `ideas.html` credits | Real first names and places: Fatimah (Lahore, Pakistan; see #88); Roseanne (Pinellas County); Mark (The Villages, FL); Cheryl (The Villages, FL); "In honor of Barbara & Dean"; "In honor of Rick, Scott, and all of the others"; "In honor of Raider, Mika, and Luka" (the huskies). | Not edited. Confirm the client has permission for each. |
 | 32 | `research.html` closing buttons | Client links `index.html#how`, which does not exist on the home page. Used `index.html#how-it-works`. | Slice 7: nav links must use `#how-it-works`, not `#how`. |
 | 33 | `research.html` closing button | "Join the first 100" (repo) became "Join our founding circle" (client), linking to `index.html#founding`. | Client copy. |
 | 34 | `ideas.html` | Meta description keeps the repo's curly apostrophes; the client's uses straight ones. Same words. | Deliberate. |
@@ -191,3 +191,84 @@ Totals: 8 occurrences, 6 distinct. Not shipped: `href="[consent link]"`.
 | 78 | `legacy-demo.html` demo script | Three lines differ from the client's script: the portrait template's `font-size:14px` is `.875rem`, and the two eyebrow `font-size:12px` are `.75rem`. Not logged before. (The scroll fix in item 70 is a fourth difference.) | Deliberate (rem scaling with A/A+). Logged. |
 | 79 | Slice 10 gate | End-of-branch gate results (privacy and parent-notice text, terms and support `<main>`, deleted-page references, COPPA grep, placeholders, header and footer) are in the slice 10 report, not repeated here. | See report. |
 | 80 | `parent-notice.html` vs `privacy.html` | The client's parent notice (client text, 8 `[bracketed]` placeholders, inert consent button) now sits next to the ORIGINAL privacy policy (`privacy.html` reverted to base 283af5c), so the two pages describe things differently: age vs date of birth, the consent method, the 50-cent charge, SMS and AI text. | Owner and dev to decide whether to revert `parent-notice.html` as well. |
+| 81 | `legacy-demo.html` demo `<style>`, lines 124-125 | Issue #5. The `#demo .story-body` rule was truncated to `#demo .story-` and ran into `.legacy{...}`, so the browser read the selector `#demo .story- .legacy`. Expanded stories and Lighthouse Cat chapters lost padding, line height and paragraph breaks (`white-space:pre-line`); the "Kept for the heirloom" footer lost its flex layout and dashed border. Restored `#demo .story-body{...}` and `#demo .legacy{...}` on their own lines (client rules, px to rem, `--display` is Lexend Deca). Integrity check: no other rule damaged. Slice 1 and 10 checks missed it. | RESOLVED (this fix). |
+
+## Fix #B: scroll targets under the sticky header (legacy-demo.html)
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 82 | Demo `<style>`, new `scroll-margin-top:var(--sm)` on `#demo .ex` and `#demo .page` | Milestone, recipe and story-select scrolls (`scrollIntoView({block:"start"})`) put the target at y=0, 112-280px under the header. `--sm` is set per measured header-height step, A and A+ separately (A+ is root 20px and the header has px-sized parts). A: 9.25rem to 480px, 14.25rem 481-530px, 10rem from 531px. A+: 10.25rem, then 8rem from 413px, 15.5rem 481px, 12.5rem 546px, 10.25rem 706px, 8rem 775px, 10.5rem 1025px, 8.5rem 1139px. The A+ rules use `html:has(#size-large[aria-pressed="true"])`; without `:has` support A+ falls back to the A values. Result: the target's top edge sits 9-48px below the header at every width from 360 to 1600px, A and A+ (1px sweep, 2,482 checks, none outside 8-50px). Script, `<main>` and `styles.css` unchanged. | Fixed. Dev to eyeball. |
+| 83 | Same | The "heading 8-50px below the header" budget cannot hold at every width: the heading sits 19-88px inside its target (milestone/recipe `.ex`: 19-30px, up to 70px (A) / 88px (A+) at 390px when the title wraps; `#spage` h3: 48px (390 A) to 88px (1440 A+)). Budget applied to the target's top edge; the heading is never hidden (smallest heading gap +31px). | Decide if a tighter heading budget is wanted (it would hide the card's top edge). |
+| 84 | Spec 12 facts | Spec says there are three `scrollIntoView` calls and a separate recipe handler. There are two (`[data-ex]` click, `innerWidth<860` story select). Recipe cards (`.rcard[data-ex]`) and milestone cards share the one `[data-ex]` handler. | Noted. |
+| 85 | Demo script | Story select scrolls only when `innerWidth<860`; the stacked layout is CSS `max-width:860px`. At exactly 860px the reader is stacked and the scroll does not run. | Not changed (script untouched). |
+| 86 | `#cpage` | The Lighthouse Cat page also has class `.page` and now gets the margin; no scroll call targets it. | Harmless. |
+| 87 | Item #67 | The 170/185 (1440px) and 162/174 (768px) header heights are out of date after the desktop header fix. | Superseded by the table below. |
+
+Header height, `legacy-demo.html` (px, `header` bounding box, headless Chromium):
+
+| Width | A | A+ |
+|-------|---|----|
+| 390 | 161 | 222 |
+| 480 | 161 | 181 |
+| 520 | 201 | 280 |
+| 640 | 115 | 235 |
+| 768 | 112 | 162 |
+| 900 | 116 | 140 |
+| 1024 | 116 | 127 |
+| 1247 | 116 | 127 |
+| 1248 | 115 | 158 |
+| 1440 | 115 | 126 |
+
+Steps between those widths (1px sweep): A changes at 363, 481, 531, 640, 758, 769, 1248px. A+ changes at 382, 413, 450, 481, 546, 640, 698, 706, 743, 769, 775, 943, 1025, 1139, 1248, 1328px.
+
+Target-top gap below the header after the fix (px; milestone / recipe / story select; story select does not scroll at 860px and up):
+
+| Width | A before | A after | A+ before | A+ after |
+|-------|----------|---------|-----------|----------|
+| 390 | -114 / -114 / -161 | +34 / +34 / +35 | -162 / -161 / -222 | +44 / +44 / +44 |
+| 768 | -112 / -112 / -112 | +48 / +48 / +48 | -162 / -162 / -162 | +42 / +43 / +43 |
+| 1440 | -115 / -116 / n/a | +45 / +44 / n/a | -126 / -126 / n/a | +44 / +44 / n/a |
+
+
+## Fix #C: credit spelling (ideas.html)
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 88 | `ideas.html` line 110, credit "Suggested by Fatimah — Lahore, Pakistan" | Deliberate deviation from the client's text, requested by the dev. The client's page (`reference/ideas.html` line 364) reads "Fatima". Only that one word changed. Item 31's credit list now says Fatimah. | Client to confirm the spelling. |
+
+## Fix #9: hero sentence says mobile app (index.html)
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 89 | `index.html` line 69, hero lead paragraph | Deliberate deviation from the client's zip: the first sentence now reads "grandbabiez™ is a mobile app that creates a unique, private space just for you and each of your grandchildren." Requested by Greg in chat on 21/10 (issue #9). Five words added ("is a mobile app that"); the `&trade;` entity and the comma in "unique, private" kept. The issue's quote ("grandbabies", no ™, no comma) is shorthand. | Client to confirm. |
+| 90 | `index.html` lines 7 and 16, `<meta name="description">` and `og:description` | Still say "Grandbabiez creates a unique, private space for you and each of your grandchildren…" without "is a mobile app that". Left unchanged on purpose (owner's decision). No twitter meta tags exist. | Owner to confirm. |
+| 91 | Other places the original sentence appears | None. The hero paragraph and the two meta tags above are the only hits for "creates a unique" in any page, `script.js`, README or CLAUDE.md. | No action. |
+
+## Fix #8: design tokens (spec 14)
+
+Baseline for "deployed site" = 283af5c (the merge-base with main is now the PR #4 merge). Style values only; no text, structure or links changed.
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 92 | `index.html`, `parent-notice.html`, `legacy-demo.html` footer CTA | Aligned to the nearest 283af5c token: font-size (incl. clamp), line-height, border-radius, one rgba. 38 values changed across 3 pages. | Done. |
+| 93 | `index.html` "Built so the least confident…" h2 (clamp 1.8rem,4vw,2.6rem) and `legacy-demo.html` CTA h2 (clamp 1.9rem,4.2vw,2.6rem) | Nearest baseline clamp has a larger maximum (2.7rem / 2.9rem). At 1440px and A+ the index h2 wrapped from 2 to 3 lines and the CTA h2 from 1 to 2, so both changes were reverted. | Not aligned. Left as is. Decide whether to accept the larger headings. |
+| 94 | `research.html`, `ideas.html`, `parent-notice.html` SVG illustrations | Colours outside the deployed palette: `#EAC7A4`, `#D8A87E`, `#8C5A38`, `#5F7A66`, `#B5544A`. Client artwork. | Exempt. Recolouring needs client approval. |
+| 95 | `legacy-demo.html` `#demo` styles and demo script | Own palette (`--honey-soft #FBEBC8`, `--sage-soft #E3ECE5`, `--blush-soft #F8E3DF`, `--clay-ink #A4512F`, ten `--p-*` person colours, canvas colours such as `#2F8A8A`, `#4F6F8F`, `#7A64B0`), shadow, radii (22px, 8px), rem sizes, tracking and line-heights. Decision D5. | Exempt. Aligning needs client approval. |
+| 96 | `index.html` lines 122, 131, 138, 145, 158, 226-230, 232, 292, 323 | Values that exist at 283af5c only on pages since removed: line-height 1.2 (what-changes), letter-spacing .12em (what-changes), border-radius 18px (join), font-size 1.5rem (what-changes). | Counted as allowed (deployed site's own values). Listed for visibility. |
+| 97 | `index.html`, `parent-notice.html`, `legacy-demo.html` | New component paddings, max-widths (19rem, 40rem, 90%, 340px, 440px) and section paddings have no 283af5c equivalent. | Deferred. Not changed. |
+| 98 | `legacy-demo.html` lines 320-524 | The demo app runs from an inline `<script>`; scope rule 6 says no inline scripts. | Noted only. Not changed. |
+
+## Fix #10: contact phone number
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 99 | All pages, `script.js` | 2026-10-21, client request (issue #10, confirmed by the owner). Old `(352) 290-3530` / `tel:+13522903530`; new `(408) 219-7677` / `tel:+14082197677`. 57 tokens replaced in site files (30 display, 27 tel); separators unchanged (plain space, plain hyphen). | Done. |
+| 100 | `privacy.html`, `terms.html`, `support.html` | Owner approved editing these legal pages for the phone number only. 16 tokens inside `<main>` (separate commit) plus 12 in their header and footer. No other text changed. | Done. Dev to review the legal diff. |
+| 101 | `parent-notice.html` | Four number tokens changed (two numbers, two links). Deliberate deviation from the client's text. | Done. Tell the client. |
+| 102 | `legacy-demo.html` | The demo data has no phone numbers. The header and footer number is the real company line and was replaced. | Done. |
+| 103 | `README.md` line 40, `docs/specs/03`, `05`, `16` | Still quote the old number. Docs and specs, not edited. | Left as is. |
+| 104 | Off-site (not in this repo) | The number must also be updated in: the Formspree notification or auto-reply text, app store listings and support fields, email signatures, social profiles, the Google business listing, printed material, and any app screen or receipt that shows it. | Reminder for the owner. |
+| 105 | Header step edges (`index.html`, `legacy-demo.html`; 1px sweep 340-1500px, real Lexend Deca) | The new number is slightly narrower, so header height steps moved 1-2px. At A: 363 to 362, 531 to 530, 758 to 757. At A+: 450 to 448, 698 to 696, 706 to 705, 743 to 741, 775 to 774, 943 to 941, 1139 to 1137. Header heights at the ten tested widths (390, 480, 520, 640, 768, 900, 1024, 1247, 1248, 1440), A and A+, are unchanged, strip line counts are unchanged, no horizontal scroll. | Logged. No CSS changed. |
+| 106 | Scroll-offset gap (scroll-margin + scroll-padding minus header height) after the number change | 22 samples newly fall outside 8-50px, all because the target sits further below the header (53-83px), never behind it. Smallest gap among them is 53px; none is below 8px or negative, so every target stays fully visible. They are `index.html` anchors `#how-it-works`, `#legacy-demo-preview`, `#founding` at A+ in 448-449px (38 to 59px) and 941-942px (40 to 53px), and the demo `.ex`/`.page` offsets at 530px A (27 to 77px) and A+ 705px (39 to 63), 774px (41 to 65), 1137-1138px (29 to 83). Six index samples at A+ 741-742px moved into the band (-7 to 18px). | Accepted for now. Needs a decision: leave, or retune the thresholds by 1-2px. |
+| 107 | Out-of-band gaps that already existed | Before the change 2,919 samples were outside 8-50px, all on `index.html` anchors (`scroll-margin-top:9rem`): 577 under 8px and 396 over 50px for each of the three anchors. After: 2,935 = index 2,925 (573 under 8px, 402 over 50px per anchor) plus legacy-demo 10 (`.ex` and `.page`, all over 50px). The demo handlers had no out-of-band samples before. | Pre-existing, mostly `index.html` anchors. Not changed. |
+| 108 | Any future header text change | Header-dependent offsets (`scroll-margin-top:9rem`, `scroll-padding-top`, the demo `--sm` values and their per-width steps) are tuned to the header heights above. Re-measure with the real font (1px sweep, A and A+) whenever the header text changes: phone number, offer line, nav labels. | Process note. |
