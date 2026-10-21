@@ -41,7 +41,7 @@
   }
 
   ajax('join-form','join-thanks','join-error-wrap','Count me in',
-    'Something went wrong. Please call (352) 290-3530 and we\u2019ll add you ourselves.',
+    'Something went wrong. Please call (408) 219-7677 and we\u2019ll add you ourselves.',
     function(form){
       var n=form.querySelector('#name'), p=form.querySelector('#phone'), e=form.querySelector('#email');
       if(n&&!n.value.trim()){ n.focus(); return ' '; }
@@ -49,5 +49,5 @@
       if(e&&(!e.value.trim()||!e.checkValidity())){ e.focus(); return 'Please enter your email address.'; }
       return null;
     },
-    'We couldn\u2019t reach the server. Please call (352) 290-3530 and we\u2019ll add you ourselves.');
+    'We couldn\u2019t reach the server. Please call (408) 219-7677 and we\u2019ll add you ourselves.');
 })();
