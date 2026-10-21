@@ -235,3 +235,11 @@ Target-top gap below the header after the fix (px; milestone / recipe / story se
 | # | Where | Item | Status |
 |---|-------|------|--------|
 | 88 | `ideas.html` line 110, credit "Suggested by Fatimah — Lahore, Pakistan" | Deliberate deviation from the client's text, requested by the dev. The client's page (`reference/ideas.html` line 364) reads "Fatima". Only that one word changed. Item 31's credit list now says Fatimah. | Client to confirm the spelling. |
+
+## Fix #9: hero sentence says mobile app (index.html)
+
+| # | Where | Item | Status |
+|---|-------|------|--------|
+| 89 | `index.html` line 69, hero lead paragraph | Deliberate deviation from the client's zip: the first sentence now reads "grandbabiez™ is a mobile app that creates a unique, private space just for you and each of your grandchildren." Requested by Greg in chat on 21/10 (issue #9). Five words added ("is a mobile app that"); the `&trade;` entity and the comma in "unique, private" kept. The issue's quote ("grandbabies", no ™, no comma) is shorthand. | Client to confirm. |
+| 90 | `index.html` lines 7 and 16, `<meta name="description">` and `og:description` | Still say "Grandbabiez creates a unique, private space for you and each of your grandchildren…" without "is a mobile app that". Left unchanged on purpose (owner's decision). No twitter meta tags exist. | Owner to confirm. |
+| 91 | Other places the original sentence appears | None. The hero paragraph and the two meta tags above are the only hits for "creates a unique" in any page, `script.js`, README or CLAUDE.md. | No action. |
