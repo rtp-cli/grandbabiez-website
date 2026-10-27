@@ -1,6 +1,13 @@
 {
   "trailingSlash": false,
   "redirects": [
+    { "source": "/privacy", "destination": "/privacy.html", "statusCode": 301 },
+    { "source": "/terms", "destination": "/terms.html", "statusCode": 301 },
+    { "source": "/research", "destination": "/research.html", "statusCode": 301 },
+    { "source": "/ideas", "destination": "/ideas.html", "statusCode": 301 },
+    { "source": "/legacy-demo", "destination": "/legacy-demo.html", "statusCode": 301 },
+    { "source": "/parent-notice", "destination": "/parent-notice.html", "statusCode": 301 },
+    { "source": "/community", "destination": "/community.html", "statusCode": 301 },
     { "source": "/why", "destination": "/", "statusCode": 301 },
     { "source": "/why.html", "destination": "/", "statusCode": 301 },
     { "source": "/whats-coming", "destination": "/", "statusCode": 301 },
