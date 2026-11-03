@@ -40,14 +40,32 @@
     });
   }
 
-  ajax('join-form','join-thanks','join-error-wrap','Count me in',
-    'Something went wrong. Please call (408) 219-7677 and we\u2019ll add you ourselves.',
+  var joinFail='That didn\u2019t go through. Please call (408) 219-7677 or email greg@grandbabiez.com and we\u2019ll add you.';
+  ajax('join-form','join-thanks','join-error-wrap','Become a founding family',
+    joinFail,
     function(form){
-      var n=form.querySelector('#name'), p=form.querySelector('#phone'), e=form.querySelector('#email');
-      if(n&&!n.value.trim()){ n.focus(); return ' '; }
-      if(p&&!p.value.trim()){ p.focus(); return ' '; }
-      if(e&&(!e.value.trim()||!e.checkValidity())){ e.focus(); return 'Please enter your email address.'; }
+      var n=form.querySelector('#name'), e=form.querySelector('#email'), c=form.querySelector('#feedback');
+      var msg='Please add your name and email and tick the feedback box, then try again.';
+      if(n&&!n.value.trim()){ n.focus(); return msg; }
+      if(e&&(!e.value.trim()||!e.checkValidity())){ e.focus(); return msg; }
+      if(c&&!c.checked){ c.focus(); return msg; }
       return null;
     },
-    'We couldn\u2019t reach the server. Please call (408) 219-7677 and we\u2019ll add you ourselves.');
+    joinFail);
+
+  var cover=document.getElementById('film-cover');
+  if(cover){
+    cover.hidden=false;
+    cover.addEventListener('click',function(){
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+cover.getAttribute('data-video')+'?autoplay=1&rel=0';
+      f.title='The Whitakers: year one';
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen=true;
+      f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+      f.style.cssText='display:block; width:100%; aspect-ratio:16/9; border:0; border-radius:16px;';
+      cover.parentNode.replaceChild(f,cover);
+      f.focus();
+    });
+  }
 })();
