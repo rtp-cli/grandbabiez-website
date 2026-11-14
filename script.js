@@ -58,7 +58,7 @@
     cover.hidden=false;
     cover.addEventListener('click',function(){
       var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+cover.getAttribute('data-video')+'?autoplay=1&rel=0';
+      f.src='https://www.youtube-nocookie.com/embed/'+cover.getAttribute('data-video')+'?autoplay=1&rel=0&cc_load_policy=0';
       f.title='Why Grandbabiez';
       f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen=true;
