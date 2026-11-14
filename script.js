@@ -58,9 +58,9 @@
     cover.hidden=false;
     cover.addEventListener('click',function(){
       var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+cover.getAttribute('data-video')+'?autoplay=1&rel=0&cc_load_policy=0&enablejsapi=1&origin='+encodeURIComponent(location.origin);
+      f.src='https://www.youtube-nocookie.com/embed/'+cover.getAttribute('data-video')+'?autoplay=1&rel=0&cc_load_policy=3&enablejsapi=1&origin='+encodeURIComponent(location.origin);
       f.title='Why Grandbabiez';
-      // cc_load_policy=0 is only a default; viewer/account settings can override it.
+      // cc_load_policy=3 is undocumented but force-disables captions; the API call below is a backup.
       // Ask the player to unload its captions module so subtitles start off.
       f.addEventListener('load',function(){
         var send=function(msg){ try{ f.contentWindow.postMessage(JSON.stringify(msg),'*'); }catch(x){} };
