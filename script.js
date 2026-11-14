@@ -58,17 +58,8 @@
     cover.hidden=false;
     cover.addEventListener('click',function(){
       var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+cover.getAttribute('data-video')+'?autoplay=1&rel=0&cc_load_policy=3&enablejsapi=1&origin='+encodeURIComponent(location.origin);
+      f.src='https://www.youtube-nocookie.com/embed/'+cover.getAttribute('data-video')+'?autoplay=1&rel=0';
       f.title='Why Grandbabiez';
-      // cc_load_policy=3 is undocumented but force-disables captions; the API call below is a backup.
-      // Ask the player to unload its captions module so subtitles start off.
-      f.addEventListener('load',function(){
-        var send=function(msg){ try{ f.contentWindow.postMessage(JSON.stringify(msg),'*'); }catch(x){} };
-        send({event:'listening',id:1,channel:'widget'});
-        [0,400,1200,2500].forEach(function(ms){
-          setTimeout(function(){ send({event:'command',func:'unloadModule',args:['captions'],id:1,channel:'widget'}); },ms);
-        });
-      });
       f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen=true;
       f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
