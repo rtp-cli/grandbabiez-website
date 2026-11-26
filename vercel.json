@@ -19,12 +19,29 @@
     { "source": "/safety", "destination": "/parent-notice.html", "statusCode": 301 },
     { "source": "/safety.html", "destination": "/parent-notice.html", "statusCode": 301 },
     { "source": "/join", "destination": "/#founding", "statusCode": 301 },
-    { "source": "/join.html", "destination": "/#founding", "statusCode": 301 }
+    { "source": "/join.html", "destination": "/#founding", "statusCode": 301 },
+    { "source": "/tv", "destination": "/?utm_source=villages_media&utm_medium=tv&utm_campaign=villages_launch", "statusCode": 302 },
+    { "source": "/villages", "destination": "/?utm_source=villages_media&utm_medium=print&utm_campaign=villages_launch", "statusCode": 302 }
   ],
   "rewrites": [
     {
       "source": "/support",
       "destination": "/support.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://connect.facebook.net https://www.facebook.com https://formspree.io; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.googletagmanager.com https://www.facebook.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+        }
+      ]
     }
   ]
 }

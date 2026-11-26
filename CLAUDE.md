@@ -59,3 +59,11 @@ change across all files rather than editing by hand.
 ## Deploy
 
 Vercel, Framework Preset "Other", no build command, output directory `/`.
+
+`vercel.json` also carries the security headers and the `/tv` and `/villages` campaign short
+links. The Content Security Policy runs as `Content-Security-Policy-Report-Only`; check the
+browser console for violations before switching it to the enforcing header. Any new external
+script, font, frame or form endpoint must be added to it.
+
+Every page carries the Meta domain verification tag (`facebook-domain-verification`) in its
+`<head>`. It must stay in the page code, not in Tag Manager.
